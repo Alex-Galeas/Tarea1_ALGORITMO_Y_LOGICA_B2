@@ -1,0 +1,1204 @@
+funcion �readeuntri�ngulo
+	//Entrada:Se solicita al usuario que ingrese el valor de la base del tri�ngulo, que se almacena en la variable "base".
+	//Se solicita al usuario que ingrese el valor de la altura del tri�ngulo, que se almacena en la variable "altura".
+	
+	//Proceso:Se calcula el �rea del tri�ngulo utilizando la f�rmula est�ndar del �rea: (base * altura) / 2.
+	//El resultado se almacena en la variable "area".
+	
+	//Salida:El programa muestra en pantalla un mensaje que indica el �rea del tri�ngulo, junto con los valores de base y altura ingresados por el usuario.
+	definir base, altura Como Entero;
+	
+	escribir "ingrese el valor de base; ";
+	leer base;
+	
+	Escribir "ingrese el valor de altura ";
+	leer altura;
+	
+	area= (base * altura) /2;
+	
+	Escribir "El �rea del tri�ngulo con base", base, "y altura", altura, "es igual a", area;
+	
+FinFuncion
+Funcion N�meroparoimpar
+	//Este programa verifica si un n�mero ingresado por el usuario es par o impar.
+	
+	//Entrada:Se solicita al usuario que ingrese un n�mero entero, que se almacena en la variable "numero".
+	
+	//Proceso:Se utiliza el operador MOD para calcular el resto de la divisi�n de "numero" entre 2.
+	//Si el resto es igual a 0, se considera que el n�mero es par.
+	//Si el resto no es igual a 0, se considera que el n�mero es impar.
+	
+	//Salida:El programa muestra en pantalla un mensaje indicando si el n�mero ingresado es par o impar, junto con el valor del n�mero ingresado por el usuario.
+    Definir numero Como Entero;
+    
+    Escribir "Ingrese un n�mero: ";
+    Leer numero;
+    
+    Si (numero MOD 2 = 0) Entonces;
+        Escribir "El n�mero", numero, "es PAR.";
+    Sino
+        Escribir "El n�mero", numero, "es IMPAR.";
+    FinSi
+FinFuncion
+funcion Calculadorasimple
+	// Entrada: Se solicita al usuario que ingrese dos n�meros (num1 y num2) y la operaci�n a realizar.
+	// Proceso: Se realiza la operaci�n matem�tica seleccionada por el usuario.
+	// Salida: Se muestra el resultado de la operaci�n o un mensaje de error.
+	
+	Definir num1, num2, resultado Como Real;
+	Definir operacion Como Caracter;
+	
+	Escribir "Ingrese el primer n�mero: ";
+	Leer num1;
+	
+	Escribir "Ingrese el segundo n�mero: ";
+	Leer num2;
+	
+	Escribir "Seleccione la operaci�n a realizar (+, -, *, /): ";
+	Leer operacion;
+	
+	Si operacion == "+" Entonces;
+		resultado = num1 + num2;
+	SiNo Si operacion == "-" Entonces;
+			resultado = num1 - num2;
+		SiNo Si operacion == "*" Entonces;
+				resultado = num1 * num2;
+			SiNo Si operacion == "/" Entonces;
+					Si num2 <> 0 Entonces;
+						resultado = num1 / num2;
+					SiNo
+						Escribir "Error: No se puede dividir por cero.";
+					FinSi
+				SiNo
+					Escribir "Operaci�n no v�lida.";
+				FinSi
+			FinSi
+		FinSi
+	FinSi
+	
+	
+	Escribir "El resultado de la operaci�n es: ", resultado;
+FinFuncion
+Funcion Tablademultiplicar
+	// Entrada: Se solicita al usuario que ingrese un n�mero (numero) para el cual se calcular� la tabla de multiplicar.
+	// Proceso: Se calcula la tabla de multiplicar del n�mero ingresado (del 1 al 10) y se muestra en pantalla.
+	// Salida: Se muestra la tabla de multiplicar del n�mero ingresado.
+	
+	Definir numero, resultado, i Como Entero
+    
+    Escribir "Por favor, ingresa un n�mero: "
+    Leer numero
+    
+    Escribir "Tabla de multiplicar del ", numero, ":"
+    
+    Para i <- 1 Hasta 10 Hacer
+        resultado <- numero * i
+        Escribir numero, " x ", i, " = ", resultado
+    FinPara
+FinFuncion
+funcion Copiarpalabra(_)
+	// Entrada: Se solicita al usuario que ingrese dos palabras (palabra1 y palabra2) que se desean concatenar.
+	// Proceso: Se concatenan las dos palabras ingresadas y se almacena el resultado en la variable "concatenacion".
+	// Salida: Se muestra en pantalla la concatenaci�n de las dos palabras.
+	
+	Definir palabra1, palabra2, concatenacion Como Caracter
+	
+    Escribir "Por favor, ingresa la primera palabra: "
+    Leer palabra1
+	
+    Escribir "Por favor, ingresa la segunda palabra: "
+    Leer palabra2
+	
+    concatenacion <- palabra1 + palabra2
+	
+    Escribir "La concatenaci�n de las dos palabras es: ", concatenacion
+FinFuncion
+funcion Mayordetresn�meros
+	// Entrada: Se solicita al usuario que ingrese tres n�meros (num1, num2 y num3) para encontrar el mayor de ellos.
+	// Proceso: Se compara cada n�mero para determinar cu�l es el mayor y se almacena en la variable "mayor".
+	// Salida: Se muestra en pantalla el n�mero mayor de los tres ingresados.
+	
+	Definir num1, num2, num3, mayor Como Real
+	
+    Escribir "Por favor, ingresa el primer n�mero: "
+    Leer num1
+	
+    Escribir "Por favor, ingresa el segundo n�mero: "
+    Leer num2
+	
+    Escribir "Por favor, ingresa el tercer n�mero: "
+    Leer num3
+	
+    Si (num1 >= num2) Y (num1 >= num3) Entonces
+        mayor <- num1
+    Sino
+        Si (num2 >= num1) Y (num2 >= num3) Entonces
+            mayor <- num2
+        Sino
+            mayor <- num3
+        FinSi
+    FinSi
+	
+    Escribir "El n�mero mayor es: ", mayor
+FinFuncion
+funcion Edadm�nimaparavotar
+	// Entrada: Se solicita al usuario que ingrese su edad (edad) para determinar si es elegible para votar.
+	// Proceso: Se verifica si la edad ingresada es mayor o igual a 18 a�os, lo que determina la elegibilidad para votar.
+	// Salida: Se muestra un mensaje indicando si el usuario es elegible o no para votar.
+	
+    Definir edad Como Entero;
+	
+	Definir edad Como Entero
+	
+    Escribir "Por favor, ingresa tu edad: "
+    Leer edad
+	
+    Si edad >= 18 Entonces
+        Escribir "Eres elegible para votar."
+    Sino
+        Escribir "Lo siento, no eres elegible para votar."
+    FinSi
+FinFuncion
+funcion CalculadoradeBMI
+	// Entrada: Se solicita al usuario que ingrese su peso en kilogramos (peso) y su altura en metros (altura) para calcular el �ndice de masa corporal (BMI).
+	// Proceso: Se calcula el �ndice de masa corporal (BMI) mediante la f�rmula BMI = peso / (altura * altura).
+	// Salida: Se muestra el valor del �ndice de masa corporal (BMI) y se categoriza seg�n el rango de BMI.
+	
+	Definir peso, altura, bmi Como Real
+	
+    Escribir "Por favor, ingresa tu peso en kilogramos: "
+    Leer peso
+	
+    Escribir "Por favor, ingresa tu altura en metros: "
+    Leer altura
+	
+    bmi <- peso / (altura * altura)
+	
+    Escribir "Tu �ndice de masa corporal (BMI) es: ", bmi
+	
+    Si bmi < 18.5 Entonces
+        Escribir "Est�s en la categor�a de bajo peso."
+    Sino
+        Si bmi >= 18.5 Y bmi < 24.9 Entonces
+            Escribir "Est�s en la categor�a de peso normal."
+        Sino
+            Si bmi >= 24.9 Y bmi < 29.9 Entonces
+                Escribir "Est�s en la categor�a de sobrepeso."
+            Sino
+                Escribir "Est�s en la categor�a de obesidad."
+            FinSi
+        FinSi
+    FinSi
+FinFuncion
+funcion N�meropositivonegativoocero
+	// Entrada: Se solicita al usuario que ingrese un n�mero (numero) para determinar si es positivo, negativo o cero.
+	// Proceso: Se verifica si el n�mero ingresado es positivo, negativo o igual a cero.
+	// Salida: Se muestra en pantalla si el n�mero es positivo, negativo o cero.
+	
+	Definir numero Como Real
+	
+    Escribir "Por favor, ingresa un n�mero: "
+    Leer numero
+	
+    Si numero > 0 Entonces
+        Escribir "El n�mero es positivo."
+    Sino
+        Si numero < 0 Entonces
+            Escribir "El n�mero es negativo."
+        Sino
+            Escribir "El n�mero es cero."
+        FinSi
+    FinSi
+FinFuncion
+funcion A�obisiesto
+	// Entrada: Se solicita al usuario que ingrese un a�o (a�o) para determinar si es un a�o bisiesto o no.
+	// Proceso: Se verifica si el a�o ingresado cumple con las condiciones para ser considerado bisiesto.
+	// Salida: Se muestra en pantalla si el a�o ingresado es un a�o bisiesto o no.
+	
+	Definir a�o Como Entero
+	
+    Escribir "Por favor, ingresa un a�o: "
+    Leer a�o
+	
+    Si (a�o % 4 = 0 Y a�o % 100 <> 0) O (a�o % 400 = 0) Entonces
+        Escribir "El a�o", a�o, " es un a�o bisiesto."
+    Sino
+        Escribir "El a�o", a�o, " no es un a�o bisiesto."
+    FinSi
+	
+FinFuncion
+funcion  Signozodiacal
+	// Entrada: Se solicita al usuario que ingrese su mes y d�a de nacimiento para determinar su signo zodiacal.
+	// Proceso: Se verifica el mes y el d�a ingresados para determinar el signo zodiacal correspondiente.
+	// Salida: Se muestra en pantalla el signo zodiacal basado en la fecha de nacimiento.
+	
+	Definir mes, dia Como Entero
+	
+    Escribir "Por favor, ingresa tu mes de nacimiento (1-12): "
+    Leer mes
+	
+    Escribir "Por favor, ingresa tu d�a de nacimiento (1-31): "
+    Leer dia
+	
+    Si (mes = 3 Y dia >= 21) O (mes = 4 Y dia <= 19) Entonces
+        Escribir "Tu signo zodiacal es Aries."
+    Sino
+        Si (mes = 4 Y dia >= 20) O (mes = 5 Y dia <= 20) Entonces
+            Escribir "Tu signo zodiacal es Tauro."
+        Sino
+            Si (mes = 5 Y dia >= 21) O (mes = 6 Y dia <= 20) Entonces
+                Escribir "Tu signo zodiacal es G�minis."
+            Sino
+                Si (mes = 6 Y dia >= 21) O (mes = 7 Y dia <= 22) Entonces
+                    Escribir "Tu signo zodiacal es C�ncer."
+                Sino
+                    Si (mes = 7 Y dia >= 23) O (mes = 8 Y dia <= 22) Entonces
+                        Escribir "Tu signo zodiacal es Leo."
+                    Sino
+                        Si (mes = 8 Y dia >= 23) O (mes = 9 Y dia <= 22) Entonces
+                            Escribir "Tu signo zodiacal es Virgo."
+                        Sino
+                            Si (mes = 9 Y dia >= 23) O (mes = 10 Y dia <= 22) Entonces
+                                Escribir "Tu signo zodiacal es Libra."
+                            Sino
+                                Si (mes = 10 Y dia >= 23) O (mes = 11 Y dia <= 21) Entonces
+                                    Escribir "Tu signo zodiacal es Escorpio."
+                                Sino
+                                    Si (mes = 11 Y dia >= 22) O (mes = 12 Y dia <= 21) Entonces
+                                        Escribir "Tu signo zodiacal es Sagitario."
+                                    Sino
+                                        Si (mes = 12 Y dia >= 22) O (mes = 1 Y dia <= 19) Entonces
+                                            Escribir "Tu signo zodiacal es Capricornio."
+                                        Sino
+                                            Si (mes = 1 Y dia >= 20) O (mes = 2 Y dia <= 18) Entonces
+                                                Escribir "Tu signo zodiacal es Acuario."
+                                            Sino
+                                                Si (mes = 2 Y dia >= 19) O (mes = 3 Y dia <= 20) Entonces
+                                                    Escribir "Tu signo zodiacal es Piscis."
+                                                FinSi
+                                            FinSi
+                                        FinSi
+                                    FinSi
+                                FinSi
+                            FinSi
+                        FinSi
+                    FinSi
+                FinSi
+            FinSi
+        FinSi
+    FinSi
+FinFuncion
+funcion D�adelmesconrespectoalasegundaquincena
+	// Entrada: Se solicita al usuario que ingrese un n�mero de d�a del mes (dia) para determinar si pertenece a la primera quincena o a la segunda quincena del mes.
+	// Proceso: Se verifica si el d�a ingresado se encuentra en la primera quincena (del 1 al 15) o en la segunda quincena (del 16 al 31) del mes.
+	// Salida: Se muestra en pantalla si el d�a pertenece a la primera quincena, a la segunda quincena o si el n�mero de d�a no es v�lido.
+	
+	Definir dia Como Entero
+	
+    Escribir "Por favor, ingresa un n�mero de d�a del mes (1-31): "
+    Leer dia
+	
+    Si dia >= 1 Y dia <= 15 Entonces
+        Escribir "El d�a ", dia, " pertenece a la primera quincena del mes."
+    Sino
+        Si dia >= 16 Y dia <= 31 Entonces
+            Escribir "El d�a ", dia, " pertenece a la segunda quincena del mes."
+        Sino
+            Escribir "El n�mero de d�a ingresado no es v�lido."
+        FinSi
+    FinSi
+FinFuncion
+funcion D�adelasemana
+	// Entrada: Se solicita al usuario que ingrese un n�mero del 1 al 7 (numeroDia) para determinar el d�a de la semana correspondiente.
+	// Proceso: Se utiliza una estructura Seg�n (Switch) para determinar el d�a de la semana en funci�n del n�mero ingresado.
+	// Salida: Se muestra en pantalla el d�a de la semana correspondiente o un mensaje de error si el n�mero de d�a no es v�lido.
+	
+	Definir numeroDia Como Entero
+	
+    Escribir "Por favor, ingresa un n�mero del 1 al 7: "
+    Leer numeroDia
+	
+    Segun numeroDia Hacer
+        Caso 1:
+            Escribir "Domingo"
+        Caso 2:
+            Escribir "Lunes"
+        Caso 3:
+            Escribir "Martes"
+        Caso 4:
+            Escribir "Mi�rcoles"
+        Caso 5:
+            Escribir "Jueves"
+        Caso 6:
+            Escribir "Viernes"
+        Caso 7:
+            Escribir "S�bado"
+        Otro:
+            Escribir "N�mero de d�a no v�lido"
+    FinSegun
+FinFuncion
+funcion Frasesiguales
+	// Entrada: Se solicita al usuario que ingrese dos frases (frase1 y frase2) para determinar si son iguales.
+	// Proceso: Se compara si las dos frases ingresadas son iguales o diferentes.
+	// Salida: Se muestra en pantalla si las frases ingresadas son iguales o diferentes.
+	
+	Definir frase1, frase2 Como Caracter
+	
+    Escribir "Por favor, ingresa la primera frase: "
+    Leer frase1
+	
+    Escribir "Por favor, ingresa la segunda frase: "
+    Leer frase2
+	
+    Si frase1 = frase2 Entonces
+        Escribir "Las frases son iguales."
+    Sino
+        Escribir "Las frases no son iguales."
+    FinSi
+FinFuncion
+funcion Calculadoradepreciocondescuento
+	// Entrada: Se solicita al usuario que ingrese el precio del art�culo (precio) y el porcentaje de descuento (porcentajeDescuento).
+	// Proceso: Se verifica si el porcentaje de descuento ingresado es v�lido (entre 0 y 100). Si es v�lido, se calcula el precio final despu�s del descuento.
+	// Salida: Se muestra en pantalla el precio final del art�culo despu�s de aplicar el descuento o un mensaje de error si el porcentaje no es v�lido.
+	
+	Definir precio, porcentajeDescuento, precioFinal Como Real
+	
+    Escribir "Por favor, ingresa el precio del art�culo: "
+    Leer precio
+	
+    Escribir "Por favor, ingresa el porcentaje de descuento: "
+    Leer porcentajeDescuento
+	
+    Si porcentajeDescuento >= 0 Y porcentajeDescuento <= 100 Entonces
+        precioFinal <- precio - (precio * porcentajeDescuento / 100)
+        Escribir "El precio final despu�s del descuento es: ", precioFinal
+    Sino
+        Escribir "El porcentaje de descuento ingresado no es v�lido."
+    FinSi
+FinFuncion
+funcion Calculadoradefacturaconimpuestos(_)
+	// Entrada: Se solicita al usuario que ingrese el total de la factura (totalFactura) y el porcentaje de impuestos (porcentajeImpuestos).
+	// Proceso: Se verifica si el porcentaje de impuestos ingresado es v�lido (mayor o igual a 0). Si es v�lido, se calcula el monto de impuestos y el total a pagar, incluyendo impuestos.
+	// Salida: Se muestra en pantalla el monto total a pagar, incluyendo impuestos, o un mensaje de error si el porcentaje de impuestos no es v�lido.
+	
+	Definir totalFactura, porcentajeImpuestos, montoImpuestos, totalAPagar Como Real
+	
+    Escribir "Por favor, ingresa el total de la factura: "
+    Leer totalFactura
+	
+    Escribir "Por favor, ingresa el porcentaje de impuestos aplicado: "
+    Leer porcentajeImpuestos
+	
+    Si porcentajeImpuestos >= 0 Entonces
+        montoImpuestos <- (totalFactura * porcentajeImpuestos / 100)
+        totalAPagar <- totalFactura + montoImpuestos
+        Escribir "El monto total a pagar, incluyendo impuestos, es: ", totalAPagar
+    Sino
+        Escribir "El porcentaje de impuestos ingresado no es v�lido."
+    FinSi
+FinFuncion
+funcion Calculadoradesueldoconaumento
+	// Entrada: Se solicita al usuario que ingrese su salario actual (salarioActual) y el porcentaje de aumento que recibir� (porcentajeAumento).
+	// Proceso: Se verifica si el porcentaje de aumento ingresado es v�lido (mayor o igual a 0). Si es v�lido, se calcula el nuevo salario despu�s del aumento.
+	// Salida: Se muestra en pantalla el nuevo salario despu�s del aumento o un mensaje de error si el porcentaje de aumento no es v�lido.
+	
+	Definir salarioActual, porcentajeAumento, nuevoSalario Como Real
+	
+    Escribir "Por favor, ingresa tu salario actual: "
+    Leer salarioActual
+	
+    Escribir "Por favor, ingresa el porcentaje de aumento que recibir�s: "
+    Leer porcentajeAumento
+	
+    Si porcentajeAumento >= 0 Entonces
+        nuevoSalario <- salarioActual + (salarioActual * porcentajeAumento / 100)
+        Escribir "Tu nuevo salario despu�s del aumento es: ", nuevoSalario
+    Sino
+        Escribir "El porcentaje de aumento ingresado no es v�lido."
+    FinSi
+	
+FinFuncion
+funcion Calculadoradecompraconm�ltiplesart�culos
+	// Entrada: El programa permite al usuario ingresar los precios y cantidades de art�culos para calcular el total de la compra.
+	// Proceso: El bucle se detiene si se ingresa un precio igual a 0 para finalizar la entrada de art�culos.
+	//Se calcula el subtotal del art�culo y se agrega al total de la compra.
+	//Si el total de la compra es superior a 100, se aplica un descuento del 10%.
+	// Salida: Se muestra en pantalla el total de la compra, que puede incluir un descuento si corresponde.
+	
+	Definir totalCompra, precio, cantidad, subtotal, descuento Como Real
+    totalCompra <- 0
+	
+    Escribir "Calculadora de compra con descuento"
+    Escribir "------------------------------"
+	
+    Mientras Verdadero
+        Escribir "Por favor, ingresa el precio del art�culo (o 0 para finalizar): "
+        Leer precio
+        Si precio = 0 Entonces
+			
+        FinSi
+		
+        Escribir "Por favor, ingresa la cantidad de este art�culo: "
+        Leer cantidad
+		
+        subtotal <- precio * cantidad
+        totalCompra <- totalCompra + subtotal
+    FinMientras
+	
+    Si totalCompra > 100 Entonces
+        descuento <- totalCompra * 0.10
+        totalCompra <- totalCompra - descuento
+        Escribir "Se aplic� un descuento del 10%."
+    FinSi
+	
+    Escribir "El total de la compra es: ", totalCompra
+FinFuncion
+funcion calcularImpuestoSalario
+	// Entrada: Se solicita al usuario que ingrese su salario anual.
+	// Proceso: Se calcula el impuesto sobre el salario. Si el salario es menor o igual a 10,000, se aplica un impuesto del 5%, de lo contrario, no se aplica impuesto.
+	// Salida: Se muestra en pantalla el impuesto sobre la renta.
+	
+	Definir  salarioAnual, impuesto Como Real
+	
+	Escribir "ingrese su salario anual "
+	leer salarioAnual
+	
+	si salarioAnual <= 10000 Entonces
+		impuesto = salarioAnual * 0.05
+	SiNo
+		impuesto = 0 
+	FinSi
+	
+	Escribir "El impuesto sobre la renta es: " , impuesto
+	
+FinFuncion
+funcion Descuentoporantig�edadenlaempresa
+	// Entrada: Se solicita al usuario que ingrese los a�os que ha estado trabajando en la empresa y su salario actual.
+	// Proceso: Se calcula el bono de antig�edad si el empleado ha trabajado m�s de 5 a�os en la empresa.
+	//Salida: verificar si cumple o no con los a�os requeridos para recibir el bono mensual de antiguedad 
+	
+	Definir a�osTrabajados, salario, bonoAntiguedad Como Real
+	
+    Escribir "Ingrese los a�os que ha estado trabajando en la empresa:"
+    Leer a�osTrabajados
+	
+    Escribir "Ingrese su salario actual:"
+    Leer salario
+	
+    Si a�osTrabajados > 5 Entonces
+        bonoAntiguedad <- salario * 0.05
+        Escribir "�Felicidades! Usted ha trabajado m�s de 5 a�os en la empresa y su bono de antig�edad es de ", bonoAntiguedad, " d�lares."
+    Sino
+        Escribir "Lo sentimos, usted no cumple con los a�os requeridos para el bono de antig�edad."
+    FinSi
+FinFuncion
+funcion Calculadoradeenv�ocontarifasdiferentes
+	// Entrada: Se solicita al usuario que ingrese la distancia de env�o en kil�metros.
+	// Proceso: Se calcula el costo de env�o. Si la distancia es menor a 50 kil�metros, el costo es de $10; de lo contrario, el costo es de $20.
+	// Salida: Se muestra en pantalla el costo de env�o.
+	
+	Definir distancia, costoEnvio Como Real
+	
+    Escribir "Ingrese la distancia de env�o en kil�metros:"
+    Leer distancia
+	
+    Si distancia < 50 Entonces
+        costoEnvio <- 10
+    Sino
+        costoEnvio <- 20
+    FinSi
+	
+    Escribir "El costo de env�o es de $", costoEnvio
+FinFuncion
+funcion Calculadoradedescuentoporlealtaddelcliente
+	// Entrada: El programa permite al usuario ingresar el total de compras mensuales durante un a�o.
+	// Proceso: Se verifica si el total de compras anuales supera los $500 para otorgar un descuento del 10% en la pr�xima compra.
+	// Salida: se verifica si se le aplicara un descuento o no en la proxima compra. 
+	
+	Definir totalComprasAnuales, totalComprasMensuales Como Real
+	
+    totalComprasAnuales <- 0
+	
+    Para mes <- 1 Hasta 12 Hacer
+        Escribir "Ingrese el total de compras para el mes ", mes, ":"
+        Leer totalComprasMensuales
+        totalComprasAnuales <- totalComprasAnuales + totalComprasMensuales
+    FinPara
+	
+    Si totalComprasAnuales > 500 Entonces
+        Escribir "Felicidades, ha calificado para un descuento del 10% en su pr�xima compra."
+    Sino
+        Escribir "Lo sentimos, no ha calificado para un descuento en su pr�xima compra."
+    FinSi
+	
+FinFuncion
+Funcion Calculadoradedescuentoporvolumendecompra
+	// Entrada: Se solicita al usuario que ingrese la cantidad de unidades y el precio unitario de un producto.
+	// Proceso: Se calcula el total de la compra con y sin descuento, dependiendo de la cantidad de unidades compradas.
+	// Salida: Se muestra en pantalla el total de la compra con y sin descuento.
+	
+	Definir cantidad, precioUnitario, totalSinDescuento, totalConDescuento Como Real
+	
+    Escribir "Ingrese la cantidad de unidades del producto que va a comprar:"
+    Leer cantidad
+	
+    Escribir "Ingrese el precio unitario del producto:"
+    Leer precioUnitario
+	
+    totalSinDescuento <- cantidad * precioUnitario
+	
+    Si cantidad >= 10 Y cantidad <= 50 Entonces
+        totalConDescuento <- totalSinDescuento - (totalSinDescuento * 0.05)
+        Escribir "Ha calificado para un descuento del 5%."
+    Sino
+        Si cantidad > 50 Y cantidad <= 100 Entonces
+            totalConDescuento <- totalSinDescuento - (totalSinDescuento * 0.10)
+            Escribir "Ha calificado para un descuento del 10%."
+        Sino
+            Si cantidad > 100 Entonces
+                totalConDescuento <- totalSinDescuento - (totalSinDescuento * 0.15)
+                Escribir "Ha calificado para un descuento del 15%."
+            Sino
+                totalConDescuento <- totalSinDescuento
+                Escribir "No ha calificado para ning�n descuento."
+            FinSi
+        FinSi
+    FinSi
+	
+    Escribir "El total de la compra sin descuento es: $", totalSinDescuento
+    Escribir "El total de la compra con descuento es: $", totalConDescuento
+FinFuncion
+funcion Calculadoradecostodeservicio
+	// Entrada: Se solicita al usuario que ingrese la cantidad de horas de servicio que necesita.
+	// Proceso: Se calcula el costo total del servicio. Si se necesitan m�s de 10 horas, se aplica un 20% de descuento.
+	// Salida: Se muestra en pantalla el costo total del servicio.
+	
+	Definir horasServicio, costoTotal Como Real
+	
+    Escribir "Ingrese la cantidad de horas de servicio que necesita:"
+    Leer horasServicio
+	
+    Si horasServicio > 10 entonces
+        costoTotal = horasServicio * 10 * 0.8  // Aplicar un 20% de descuento
+    Sino
+        costoTotal = horasServicio * 10
+    FinSi
+	
+    Escribir "El costo total del servicio es: ", costoTotal
+FinFuncion
+funcion  SumaNumerosPares
+	// Entrada: No hay entrada expl�cita.
+	// Proceso: Sumar n�meros pares del 1 al 50.
+	// Salida: Mostrar la suma de n�meros pares. 
+	
+    Definir suma, numero como Entero
+    suma <- 0
+    
+    Para numero <- 1 Hasta 50 Con Paso 1
+        Si numero MOD 2 = 0 Entonces
+            suma <- suma + numero
+        FinSi
+    FinPara
+	
+    Escribir "La suma de los n�meros pares del 1 al 50 es: ", suma
+	
+FinFuncion
+Funcion TablaDeMultiplicar
+	// Entrada: Se solicita al usuario que ingrese un n�mero.
+	// Proceso: Calcular la tabla de multiplicar del n�mero ingresado.
+	//Salida: verificar si el resultado es el correcto con el valor indicado.
+	
+    Definir numero, resultado, i como Entero
+    Escribir "Ingrese un n�mero para obtener su tabla de multiplicar: "
+    Leer numero
+	
+    Para i <- 1 Hasta 12 Con Paso 1
+        resultado <- numero * i
+        Escribir numero, " x ", i, " = ", resultado
+    FinPara
+FinFuncion
+Funcion ContadorDeVocales
+	// Entrada: Se solicita al usuario que ingrese una palabra.
+	// Proceso: Contar las vocales en la palabra.
+	// Salida: Mostrar el n�mero de vocales en la palabra.
+
+    Definir palabra Como Caracter
+	Definir contador, i Como Entero
+    
+    Escribir "Ingresa una palabra: "
+    Leer palabra
+    
+    contador <- 0
+    i <- 1
+    
+    Mientras i <= Longitud(palabra) Hacer
+        // Obtener el car�cter actual
+        caracter <- SubCadena(palabra, i, i)
+        
+        // Verificar si el car�cter es una vocal en min�scula
+        Si caracter = "a" O caracter = "e" O caracter = "i" O caracter = "o" O caracter = "u" Entonces
+            contador <- contador + 1
+        FinSi
+        
+        i <- i + 1
+    FinMientras
+    
+    Escribir "El n�mero de vocales en la palabra es: ", contador
+	
+FinFuncion
+
+Funcion ContadorDeDigitos
+	// Entrada: Se solicita al usuario que ingrese una palabra.
+	// Proceso: Contar los d�gitos en la palabra.
+	// Salida: Mostrar el n�mero de d�gitos en la palabra.
+	
+    Definir palabra Como Caracter
+    Definir i, contador Como Entero
+	
+    Escribir "Ingresa una palabra: "
+    Leer palabra
+	
+    contador <- 0
+	
+    Para i <- 1 Hasta Longitud(palabra) Con Paso 1 Hacer
+        Si SubCadena(palabra, i, i) >= "0" Y SubCadena(palabra, i, i) <= "9" entonces
+            contador <- contador + 1
+        FinSi
+    FinPara
+	
+    Escribir "El n�mero de d�gitos en la palabra es: ", contador
+FinFuncion
+
+funcion AdivinaElNumero
+	// Entrada: El programa genera un n�mero aleatorio.
+	// Proceso: Juego para adivinar un n�mero aleatorio.
+	//Salida: verificar si el resultado es el crroecto 
+	
+    Definir numeroAleatorio, numeroUsuario Como Entero
+    Definir intentos Como Entero
+    Definir adivinado Como Logico
+    
+    // Generar un n�mero aleatorio entre 1 y 100
+    numeroAleatorio <- Aleatorio(1, 100)
+    
+    intentos <- 0
+    adivinado <- Falso
+    
+    Escribir "Adivina el n�mero entre 1 y 100."
+    
+    Mientras No adivinado Hacer
+        Escribir "Ingresa tu n�mero: "
+        Leer numeroUsuario
+        
+        intentos <- intentos + 1
+        
+        Si numeroUsuario = numeroAleatorio Entonces
+            Escribir "�Felicidades! Adivinaste el n�mero ", numeroAleatorio, " en ", intentos, " intentos."
+            adivinado <- Verdadero
+        Sino
+            Si numeroUsuario < numeroAleatorio Entonces
+                Escribir "El n�mero es mayor."
+            Sino
+                Escribir "El n�mero es menor."
+            FinSi
+        FinSi
+    FinMientras
+FinFuncion
+funcion ContadorDeAlfabeto
+	// Entrada: Se solicita al usuario que ingrese una palabra.
+	// Proceso: Contar las letras del alfabeto en la palabra.
+	// Salida: Mostrar el n�mero de letras del alfabeto en la palabra.
+
+    Definir palabra Como Caracter
+	Definir i, contador Como Entero
+    
+    Escribir "Ingresa una palabra: "
+    Leer palabra
+    
+    palabra <- Minusculas (palabra)  // Convertir la palabra a min�sculas para simplificar la comparaci�n
+    
+    contador <- 0
+    
+    Para i <- 1 Hasta Longitud(palabra) Con Paso 1 Hacer
+        // Obtener el car�cter actual
+        caracter <- SubCadena(palabra, i, i)
+        
+        // Verificar si el car�cter es una letra del alfabeto
+        Si caracter >= "a" Y caracter <= "z" Entonces
+            contador <- contador + 1
+        FinSi
+    FinPara
+    
+    Escribir "El n�mero de letras del alfabeto en la palabra es: ", contador
+FinFuncion
+Funcion SumaDeImpares
+	// Entrada: No hay entrada expl�cita.
+	// Proceso: Sumar n�meros impares del 1 al 100.
+	// Salida: Mostrar la suma de n�meros impares.
+
+    Definir suma Como Entero
+    suma <- 0
+    
+    Para numero <- 1 Hasta 100 Con Paso 2 Hacer
+        suma <- suma + numero
+    FinPara
+    
+    Escribir "La suma de los n�meros impares del 1 al 100 es: ", suma
+FinFuncion
+
+//ENTRADA: Pedimos al usuario que ingrese una palabra (leer).
+//PROCESO: Utilizamos la funci�n Longitud para contar cu�ntos caracteres hay en la palabra ingresada.
+//SALIDA: Mostramos el n�mero de caracteres.
+Funcion contarCaracteres
+	Definir palabra Como Cadena
+	
+	Escribir "Ingrese una palabra: "
+	Leer palabra
+	
+	Escribir "La palabra tiene ", Longitud(palabra), " caracteres."
+FinFuncion
+
+//PROCESO: Pedimos al usuario que ingrese n�meros enteros positivos uno por uno y utilizamos un bucle while 
+//para calcular la suma de estos n�meros. El ciclo debe terminar cuando el usuario ingrese un n�mero negativo.
+//SALIDA: Mostramos la suma de los n�meros ingresados.
+Funcion sumaNumerosPositivos
+	Definir _numero, suma Como Entero
+	suma = 0
+	
+	Escribir "Ingrese n�meros enteros positivos (ingrese un n�mero negativo para terminar):"
+	Leer _numero
+	
+	Mientras _numero >= 0
+		suma = suma + _numero
+		Leer _numero
+	FinMientras
+	
+	Escribir "La suma de los n�meros ingresados es: ", suma
+FinFuncion
+
+//ENTRADA: Pedimos al usuario que ingrese un n�mero entero positivo (leer).
+//PROCESO: Utilizamos un bucle while para mostrar una cuenta regresiva desde ese n�mero hasta 1.
+//SALIDA: Mostramos la cuenta regresiva.
+Funcion cuentaRegresiva
+	Definir _numero Como Entero
+	
+	Escribir "Ingrese un n�mero entero positivo: "
+	Leer _numero
+	
+	Escribir "Cuenta regresiva desde ", _numero, " hasta 1:"
+	
+	Mientras numero >= 1
+		Escribir _numero
+		numero = _numero - 1
+	FinMientras
+FinFuncion
+
+//PROCESO: Creamos un arreglo de n�meros enteros y calculamos la suma de todos sus elementos.
+//SALIDA: Mostramos la suma de los elementos del arreglo.
+Funcion sumaElementosArreglo
+	Definir arreglo, indice, elemento, suma Como Entero
+	Dimension arreglo[5]
+	
+	suma = 0
+	
+	// Inicializamos el arreglo con valores
+	arreglo[1] = 5
+	arreglo[2] = 10
+	arreglo[3] = 15
+	arreglo[4] = 20
+	arreglo[5] = 25
+	
+	Para indice = 5 Hasta 1 Con Paso -1 Hacer
+		suma = suma + arreglo[indice]
+	Fin Para
+	
+	Escribir "La suma de los elementos en el arreglo es: ", suma
+FinFuncion
+
+//PROCESO: Creamos un arreglo de calificaciones (n�meros decimales) y calculamos el promedio de las calificaciones.
+//SALIDA: Mostramos el promedio de las calificaciones en el arreglo.
+Funcion promedioCalificaciones
+	Definir calificaciones, suma, promedio Como Real
+	Dimension calificaciones[5]
+	
+	suma = 0
+	
+	// Inicializamos el arreglo con calificaciones
+	calificaciones[1] = 9.5
+	calificaciones[2] = 8.0
+	calificaciones[3] = 7.5
+	calificaciones[4] = 9.0
+	calificaciones[5] = 8.5
+	
+	Para indice = 5 Hasta 1 Con Paso -1 Hacer
+		suma = suma + calificaciones[indice]
+	Fin Para
+	
+	promedio = suma / 5
+	
+	Escribir "El promedio de las calificaciones es: ", promedio
+FinFuncion
+
+//PROCESO: Encontramos el valor m�ximo y m�nimo en un arreglo de n�meros enteros.
+//SALIDA: Mostramos el valor m�ximo y m�nimo.
+Funcion encontrarMayorMenor
+	Definir arreglo, _mayor, _menor Como Real
+	Dimension arreglo[5]
+	
+	// Inicializamos el arreglo con valores
+	//arreglo = [15, 7, 25, 10, 5]
+	arreglo[1] = 5
+	arreglo[2] = 7
+	arreglo[3] = 25
+	arreglo[4] = 10
+	arreglo[5] = 5
+	
+	// Inicializamos las variables mayor y menor con el primer elemento del arreglo
+	_mayor = arreglo[1]
+	_menor = arreglo[1]
+	
+	Para indice = 5 Hasta 1 Con Paso -1 Hacer
+		Si arreglo[indice] > _mayor Entonces
+			_mayor = arreglo[indice]
+		FinSi
+		
+		Si arreglo[indice] < _menor Entonces
+			_menor = arreglo[indice]
+		FinSi
+	Fin Para
+	
+	Escribir "El valor m�ximo en el arreglo es: ", _mayor
+	Escribir "El valor m�nimo en el arreglo es: ", _menor
+FinFuncion
+
+//ENTRADA: Pedimos al usuario que ingrese un n�mero a buscar en un arreglo (leer).
+//PROCESO: Verificamos si ese n�mero est� presente en un arreglo dado.
+//SALIDA: Mostramos si el n�mero est� presente o no.
+Funcion buscarElemento
+	Definir arreglo, _numero Como Entero
+	Definir encontrado Como Logico
+	Dimension  arreglo[5]
+	
+	encontrado = Falso
+	
+	// Inicializamos el arreglo con valores
+	//arreglo = [10, 20, 30, 40, 50]
+	arreglo[1] = 10
+	arreglo[2] = 20
+	arreglo[3] = 30
+	arreglo[4] = 40
+	arreglo[5] = 50
+	
+	Escribir "Ingrese un n�mero para buscar en el arreglo: "
+	Leer _numero
+	
+	Para indice = 5 Hasta 1 Con Paso -1 Hacer
+		Si arreglo[indice] == _numero Entonces
+			encontrado = Verdadero
+			//Salir // Salimos del bucle si encontramos el n�mero
+		FinSi
+	FinPara
+	
+	Si encontrado Entonces
+		Escribir "El n�mero ", _numero, " est� presente en el arreglo."
+	SiNo
+		Escribir "El n�mero ", _numero, " no est� presente en el arreglo."
+	FinSi
+FinFuncion
+
+//PROCESO: Contamos cu�ntos n�meros pares hay en un arreglo de n�meros enteros.
+//SALIDA: Mostramos el n�mero de elementos pares en el arreglo.
+Funcion contarElementosPares
+	Definir arreglo, elemento, contadorPares Como Entero
+	Dimension arreglo[6]
+	
+	contadorPares = 0
+	
+	// Inicializamos el arreglo con valores
+	//arreglo = [5, 10, 15, 20, 25, 30]
+	arreglo[1] = 5
+	arreglo[2] = 10
+	arreglo[3] = 15
+	arreglo[4] = 20
+	arreglo[5] = 25
+	arreglo[6] = 30
+	
+	Para indice = 6 Hasta 1 Con Paso -1 Hacer
+		elemento = arreglo[indice]
+		
+		Si elemento % 2 == 0 Entonces
+			contadorPares = contadorPares + 1
+		FinSi
+	FinPara
+	
+	Escribir "El n�mero de elementos pares en el arreglo es: ", contadorPares
+FinFuncion
+
+//PROCESO: Invertimos el orden de los elementos en un arreglo.
+//SALIDA: Mostramos el arreglo invertido.
+Funcion invertirArreglo
+	Definir longitudArreglo, arregloOriginal, arregloInvertido, elemento Como Entero
+	Dimension arregloOriginal[5]
+	Dimension arregloInvertido[5]
+	
+	// Inicializamos el arreglo original con valores
+	arregloOriginal[1] = 1
+	arregloOriginal[2] = 2
+	arregloOriginal[3] = 3
+	arregloOriginal[4] = 4
+	arregloOriginal[5] = 5
+	
+	longitudArreglo = 5
+	
+	// Invertimos el arreglo y recorremos la mitad del arreglo, intercambiando 
+	//los elementos desde el principio con los elementos desde el final
+	Para indice = 1 Hasta longitudArreglo Hacer // o longitudArreglo/2
+		elemento = arregloOriginal[indice]
+		arregloInvertido[indice] = arregloOriginal[longitudArreglo -indice +1]
+		//arregloInvertido[_longitud -indice +1] = elemnto
+	FinPara
+	
+	Escribir "Arreglo invertido:"
+	Escribir arregloInvertido[1]
+	Escribir arregloInvertido[2]
+	Escribir arregloInvertido[3]
+	Escribir arregloInvertido[4]
+	Escribir arregloInvertido[5]
+FinFuncion
+
+//ENTRADA: Pedimos al usuario que ingrese un valor a buscar en un arreglo (leer).
+//PROCESO: Encontramos el �ndice de ese valor en un arreglo y mostramos todos los �ndices si el valor aparece m�s de una vez.
+//SALIDA: Mostramos los �ndices del valor encontrado.
+Funcion buscarIndiceValor
+	Definir arreglo, _valor Como Entero
+	Definir encontrado Como Logico
+	Dimension arreglo[6]
+	
+	encontrado = Falso
+	
+	// Inicializamos el arreglo con valores
+	//arreglo = [10, 20, 30, 40, 20, 50]
+	arreglo[1] = 10
+	arreglo[2] = 20
+	arreglo[3] = 30
+	arreglo[4] = 40
+	arreglo[5] = 20
+	arreglo[6] = 50
+	
+	Escribir "Ingrese un valor para buscar en el arreglo: "
+	Leer _valor
+	
+	Escribir "Los �ndices del valor ", _valor, " en el arreglo son:"
+	
+	Para i = 1 Hasta 6
+		Si arreglo[i] == _valor Entonces
+			Escribir i
+			encontrado = Verdadero
+		FinSi
+	FinPara
+	
+	Si no encontrado Entonces
+		Escribir "El valor ", _valor, " no se encuentra en el arreglo."
+	FinSi
+FinFuncion
+
+//PROCESO: Creamos una funci�n sin par�metros para saludar.
+//SALIDA: Mostramos un mensaje de saludo.
+Funcion saludar
+	Escribir "�Hola! Bienvenido."
+FinFuncion
+
+//ENTRADA: Pedimos al usuario que ingrese dos n�meros (leer).
+//PROCESO: Creamos una funci�n con par�metros para sumar los dos n�meros.
+//SALIDA: Mostramos la suma de los dos n�meros.
+Funcion sumarDosNumeros(numero1, numero2)
+	Definir suma Como Entero
+	suma = numero1 + numero2
+	Escribir "La suma de ", numero1, " y ", numero2, " es: ", suma
+FinFuncion
+
+//ENTRADA: Pedimos al usuario que ingrese dos n�meros (leer).
+//PROCESO: Creamos una funci�n con return para multiplicar los dos n�meros y devolver el resultado.
+//SALIDA: Mostramos el resultado de la multiplicaci�n.
+Funcion multiplicarDosNumeros(numero1, numero2)
+	Definir resultado Como Entero
+	resultado = numero1 * numero2
+	Devolver resultado
+FinFuncion
+
+//ENTRADA: Pedimos al usuario que ingrese un n�mero (leer).
+//PROCESO: Creamos una funci�n sin return para determinar si el n�mero es par o impar y mostramos el resultado.
+//SALIDA: Mostramos si el n�mero es par o impar.
+Funcion verificarParImpar(_numero)
+	Si numero % 2 == 0 Entonces
+		Escribir "El n�mero ", _numero, " es par."
+	SiNo
+		Escribir "El n�mero ", _numero, " es impar."
+	FinSi
+FinFuncion
+
+//ENTRADA: Pedimos al usuario que ingrese la base y la altura del rect�ngulo (leer).
+//PROCESO: Creamos una funci�n con par�metros y return para calcular el �rea del rect�ngulo.
+//SALIDA: Mostramos el �rea del rect�ngulo.
+Funcion calcularAreaRectangulo(base, altura)
+	Definir area Como Real
+	area = base * altura
+	Devolver area
+FinFuncion
+
+//PROCESO: Creamos una funci�n sin par�metros para imprimir tu nombre.
+//SALIDA: Mostramos tu nombre.
+Funcion imprimirNombre
+	Escribir "Mi nombre es [Tu Nombre]"
+FinFuncion
+
+//ENTRADA: Pedimos al usuario que ingrese una temperatura en grados Celsius (leer).
+//PROCESO: Creamos una funci�n con return para convertir grados Celsius a Fahrenheit.
+//SALIDA: Mostramos la temperatura en grados Fahrenheit.
+Funcion celsiusToFahrenheit(gradosCelsius)
+	Definir gradosFahrenheit Como Real
+	gradosFahrenheit = (gradosCelsius * 9/5) + 32
+	Devolver gradosFahrenheit
+FinFuncion
+
+//ENTRADA: Pedimos al usuario que ingrese una frase y un car�cter (leer).
+//PROCESO: Creamos una funci�n con par�metros para contar cu�ntas veces aparece el car�cter en la frase.
+//SALIDA: Mostramos el n�mero de veces que aparece el car�cter en la frase.
+Funcion contarCaracterEnFrase(frase, _caracter)
+	Definir contador Como Entero
+	contador = 0
+	
+	Para index = 1 Hasta Longitud(frase)
+		Si Subcadena(frase, index, index) == _caracter Entonces
+			contador = contador + 1
+		FinSi
+	FinPara
+	
+	Escribir "El car�cter: ", _caracter, " aparece ", contador, " veces en la frase."
+FinFuncion
+
+//PROCESO: Creamos una funci�n sin par�metros para imprimir los n�meros del 1 al 10.
+//SALIDA: Mostramos los n�meros.
+Funcion imprimirNumerosDelUnoAlDiez
+	Para i = 1 Hasta 10
+		Escribir i
+	FinPara
+FinFuncion
+
+//ENTRADA: Pedimos al usuario que ingrese una lista de n�meros separados por comas (leer).
+//PROCESO: Creamos una funci�n con par�metros y return para sumar los n�meros en la lista.
+//SALIDA: Mostramos la suma de los n�meros.
+Funcion sumarListaNumeros(lista)
+	Definir _numeros, suma Como Real
+	
+	_numeros = ConvertirANumero(lista)
+	suma = 0
+	
+	Para index = 1 Hasta _numeros
+		suma = suma + _numero
+	FinPara
+	
+	Devolver suma
+FinFuncion
+
+//ENTRADA: Pedimos al usuario el valor de compras (leer).
+//PROCESO: Calcualmos el valor de descuento (calcular), si las compras
+//son mayores a $100 aplicamos descuento descuentoMax y si son menores aplicamos descuentoMin
+//al valor resultante le sumamos el valor de iva.
+//SALIDA: Mostramos al usuario el totalCompras (mostrar).
+Funcion calcularTotalCompras
+	Definir compras, descuentoMin, descuentoMax, iva, valorMaximo, totalCompras Como Real
+	
+	compras = 0
+	descuentoMin = 15
+	descuentoMax = 20
+	iva = 12
+	valorMaximo = 100
+	totalCompras = 0
+	
+	Escribir "Ingrese el valor de las compras"
+	Leer  compras
+	
+	si compras >= valorMaximo Entonces
+		Definir  descuento Como Real
+		descuento = (compras * (descuentoMax) / 100)
+		compras = compras - descuento
+	SiNo
+		compras = compras - (compras * (descuentoMin) / 100)
+	FinSi
+	
+	totalCompras = compras + (compras * (iva) / 100)
+	
+	Escribir  "Subtotal: ", compras
+	Escribir  "IVA: ", iva, "%"
+	Escribir  "Su valor de las compras mas IVA es: ", totalCompras
+FinFuncion
+
+Algoritmo Principal	
+	//Ejercicios algoritmos secuenciales (paso a paso):
+	//sumaDosNumeros
+	//calcularAreaTriangulo
+	//verificarParOImpar
+	//calculadoraSimple
+	//tablaMultiplicar
+	//copiarPalabra
+	
+	//Ejercicios algoritmos selectivos (con condiciones):
+	//encontrarMayor
+	//verificarElegibilidadVotar
+	//calcularBMI
+	//verificarPositivoNegativoCero
+	//verificarAnoBisiesto
+	//determinarSignoZodiacal
+	//verificarQuincena
+	//determinarDiaSemana
+	//compararFrases
+	//calcularPrecioConDescuento
+	//calcularFacturaConImpuestos
+	//calcularSueldoConAumento
+	//calcularCompraConDescuento
+	//calcularImpuestoSalario
+	//calcularImpuestoSalario2
+	//calcularImpuestoSalario3
+	//calcularBonoAntiguedad
+	//calcularCostoEnvio
+	//calcularDescuentoLealtad
+	//calcularDescuentoVolumenCompra
+	//calcularDescuentoVolumenCompra2
+	//calcularDescuentoVolumenCompra3
+	//calcularCostoServicio
+	
+	//Ejercicios algoritmos (con ciclos For y While):
+	//sumaNumerosPares
+	//tablaMultiplicar
+	//contarVocales
+	//contarDigitos
+	//contarLetrasAlfabeto
+	//sumaNumerosImpares
+	//contarCaracteres
+	//sumaNumerosPositivos
+	//cuentaRegresiva
+	
+	//Ejercicios algoritmos (con arreglos):
+	//sumaElementosArreglo
+	//promedioCalificaciones
+	//encontrarMayorMenor
+	//buscarElemento
+	//contarElementosPares
+	//invertirArreglo
+	//buscarIndiceValor
+	
+	//Ejercicios algoritmos (con funciones)
+	//saludar
+	//sumarDosNumeros(5, 10)
+	//resultado = multiplicarDosNumeros(5, 50)
+	//verificarParImpar(25)
+	//areaRectangulo = calcularAreaRectangulo(base, altura)
+	//imprimirNombre
+	//fahrenheit = celsiusToFahrenheit(celsius)
+	//contarCaracterEnFrase(frase, carac)
+	//imprimirNumerosDelUnoAlDiez
+	//sumaTotal = sumarListaNumeros(lista)
+	
+	//calcularTotalCompras
+FinAlgoritmo
