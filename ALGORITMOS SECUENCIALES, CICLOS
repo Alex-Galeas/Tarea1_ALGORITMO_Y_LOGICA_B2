@@ -1,0 +1,623 @@
+funcion  SumaNumerosPares
+    Definir suma, numero como Entero
+    suma <- 0
+    
+    Para numero <- 1 Hasta 50 Con Paso 1
+        Si numero MOD 2 = 0 Entonces
+            suma <- suma + numero
+        FinSi
+    FinPara
+	
+    Escribir "La suma de los n�meros pares del 1 al 50 es: ", suma
+	
+FinFuncion
+Funcion TablaDeMultiplicar
+    Definir numero, resultado, i como Entero
+    Escribir "Ingrese un n�mero para obtener su tabla de multiplicar: "
+    Leer numero
+	
+    Para i <- 1 Hasta 12 Con Paso 1
+        resultado <- numero * i
+        Escribir numero, " x ", i, " = ", resultado
+    FinPara
+FinFuncion
+Funcion ContadorDeVocales
+    Definir palabra Como Caracter
+	Definir contador, i Como Entero
+    
+    Escribir "Ingresa una palabra: "
+    Leer palabra
+    
+    contador <- 0
+    i <- 1
+    
+    Mientras i <= Longitud(palabra) Hacer
+        // Obtener el car�cter actual
+        caracter <- SubCadena(palabra, i, i)
+        
+        // Verificar si el car�cter es una vocal en min�scula
+        Si caracter = "a" O caracter = "e" O caracter = "i" O caracter = "o" O caracter = "u" Entonces
+            contador <- contador + 1
+        FinSi
+        
+        i <- i + 1
+    FinMientras
+    
+    Escribir "El n�mero de vocales en la palabra es: ", contador
+	
+FinFuncion
+
+Funcion ContadorDeDigitos
+	Definir palabra Como Caracter
+    Definir i, contador Como Entero
+    
+    Escribir "Ingresa una palabra: "
+    Leer palabra
+    
+    contador <- 0
+    
+    Para i <- 1 Hasta Longitud(palabra) Con Paso 1 Hacer
+        Si (SubCadena (palabra, i, i)) >= "0" Y (SubCadena (palabra, i, i)) <= "9" Entonces
+            contador <- contador + 1
+        FinSi
+    FinPara
+    
+    Escribir "El n�mero de d�gitos en la palabra es: ", contador
+FinFuncion
+funcion AdivinaElNumero
+    Definir numeroAleatorio, numeroUsuario Como Entero
+    Definir intentos Como Entero
+    Definir adivinado Como Logico
+    
+    // Generar un n�mero aleatorio entre 1 y 100
+    numeroAleatorio <- Aleatorio(1, 100)
+    
+    intentos <- 0
+    adivinado <- Falso
+    
+    Escribir "Adivina el n�mero entre 1 y 100."
+    
+    Mientras No adivinado Hacer
+        Escribir "Ingresa tu n�mero: "
+        Leer numeroUsuario
+        
+        intentos <- intentos + 1
+        
+        Si numeroUsuario = numeroAleatorio Entonces
+            Escribir "�Felicidades! Adivinaste el n�mero ", numeroAleatorio, " en ", intentos, " intentos."
+            adivinado <- Verdadero
+        Sino
+            Si numeroUsuario < numeroAleatorio Entonces
+                Escribir "El n�mero es mayor."
+            Sino
+                Escribir "El n�mero es menor."
+            FinSi
+        FinSi
+    FinMientras
+FinFuncion
+funcion CContadorDeAlfabeto
+    Definir palabra Como Caracter
+	Definir i, contador Como Entero
+    
+    Escribir "Ingresa una palabra: "
+    Leer palabra
+    
+    palabra <- Minusculas (palabra)  // Convertir la palabra a min�sculas para simplificar la comparaci�n
+    
+    contador <- 0
+    
+    Para i <- 1 Hasta Longitud(palabra) Con Paso 1 Hacer
+        // Obtener el car�cter actual
+        caracter <- SubCadena(palabra, i, i)
+        
+        // Verificar si el car�cter es una letra del alfabeto
+        Si caracter >= "a" Y caracter <= "z" Entonces
+            contador <- contador + 1
+        FinSi
+    FinPara
+    
+    Escribir "El n�mero de letras del alfabeto en la palabra es: ", contador
+FinFuncion
+Funcion SumaDeImpares
+    Definir suma Como Entero
+    suma <- 0
+    
+    Para numero <- 1 Hasta 100 Con Paso 2 Hacer
+        suma <- suma + numero
+    FinPara
+    
+    Escribir "La suma de los n�meros impares del 1 al 100 es: ", suma
+FinFuncion
+Funcion ContadorDeCaracteres
+    Definir palabra Como Cadena
+    Definir longitud Como Entero
+    
+    Escribir "Ingresa una palabra: "
+    Leer palabra
+    
+    longitud <- 0
+    
+    Para i <- 1 Hasta Longitud(palabra) Con Paso 1 Hacer
+        longitud <- longitud + 1
+    FinPara
+    
+    Escribir "La palabra tiene ", longitud, " caracteres."
+FinFuncion
+Funcion SumaDeNumeros
+    Definir numero, suma Como Entero
+    
+    suma <- 0
+    
+    Escribir "Ingresa n�meros enteros positivos uno por uno. Ingresa un n�mero negativo para finalizar."
+    
+    Leer numero
+    
+    Mientras numero >= 0 Hacer
+        suma <- suma + numero
+        Leer numero
+    FinMientras
+    
+    Escribir "La suma de los n�meros ingresados es: ", suma
+FinFuncion
+Funcion CuentaRegresiva
+    Definir numero Como Entero
+    
+    Escribir "Ingresa un n�mero entero positivo: "
+    Leer numero
+    
+    Si numero <= 0 Entonces
+        Escribir "El n�mero ingresado no es v�lido. Debe ser un n�mero entero positivo."
+    Sino
+        Mientras numero >= 1 Hacer
+            Escribir numero
+            numero <- numero - 1
+        FinMientras
+    FinSi
+FinFuncion
+
+
+
+
+Funcion SumaDeElementos
+    Definir arreglo, suma Como Entero // Crear un arreglo de 10 elementos (puedes ajustar el tama�o seg�n tus necesidades)
+    Dimension arreglo[10]
+    
+    // Llenar el arreglo con valores (en este caso, valores aleatorios)
+    Para i <- 1 Hasta 10 Hacer
+        arreglo[i] <- Aleatorio(1, 100)  // Genera n�meros aleatorios entre 1 y 100
+    FinPara
+    
+    suma <- 0  // Inicializar la variable suma en 0
+    
+    // Iterar a trav�s de los elementos del arreglo y sumarlos
+    Para i <- 1 Hasta 10 Hacer
+        suma <- suma + arreglo[i]
+    FinPara
+    
+    Escribir "El arreglo contiene los siguientes elementos:"
+    
+    // Mostrar los elementos del arreglo
+    Para i <- 1 Hasta 10 Hacer
+        Escribir arreglo[i]
+    FinPara
+    
+    Escribir "La suma de los elementos es: ", suma
+FinFuncion
+
+
+Funcion  PromedioCalificaciones
+    Definir n, i como Entero
+    Definir calificaciones[100] como Real  ' Puedes ajustar el tama�o del arreglo seg�n tus necesidades
+    Definir suma, promedio como Real
+	
+    Escribir "Ingrese la cantidad de calificaciones: "
+    Leer n
+	
+    ' Leer las calificaciones y calcular la suma
+    suma <- 0
+    Para i <- 1 Hasta n
+        Escribir "Ingrese la calificaci�n ", i, ": "
+        Leer calificaciones[i]
+        suma <- suma + calificaciones[i]
+    FinPara
+	
+    ' Calcular el promedio
+    promedio <- suma / n
+	
+    Escribir "Calificaciones ingresadas:"
+    Para i <- 1 Hasta n
+        Escribir "Calificaci�n ", i, ": ", calificaciones[i]
+    FinPara
+	
+    Escribir "El promedio de las calificaciones es: ", promedio
+FinFuncion
+
+Funcion  MayorMenorValor
+    Definir n, i como Entero
+    Definir numeros[100] como Entero  ' Puedes ajustar el tama�o del arreglo seg�n tus necesidades
+    Definir maximo, minimo como Entero
+	
+    Escribir "Ingrese la cantidad de n�meros: "
+    Leer n
+	
+    ' Leer los n�meros y encontrar el m�ximo y el m�nimo
+    Para i <- 1 Hasta n
+        Escribir "Ingrese el n�mero ", i, ": "
+        Leer numeros[i]
+		
+        Si i = 1 Entonces
+            maximo <- numeros[i]
+            minimo <- numeros[i]
+        Sino
+            Si numeros[i] > maximo Entonces
+                maximo <- numeros[i]
+            FinSi
+            Si numeros[i] < minimo Entonces
+                minimo <- numeros[i]
+            FinSi
+        FinSi
+    FinPara
+	
+    Escribir "N�meros ingresados:"
+    Para i <- 1 Hasta n
+        Escribir "N�mero ", i, ": ", numeros[i]
+    FinPara
+	
+    Escribir "El n�mero m�ximo es: ", maximo
+    Escribir "El n�mero m�nimo es: ", minimo
+FinFuncion
+
+Funcion BuscarElemento
+    Definir n, i, numeroBuscado como Entero
+    Definir arreglo[100] como Entero  ' Puedes ajustar el tama�o del arreglo seg�n tus necesidades
+    Definir encontrado como Logico
+	
+    Escribir "Ingrese la cantidad de elementos en el arreglo: "
+    Leer n
+	
+    ' Leer los elementos del arreglo
+    Para i <- 1 Hasta n
+        Escribir "Ingrese el elemento ", i, ": "
+        Leer arreglo[i]
+    FinPara
+	
+    Escribir "Ingrese el n�mero que desea buscar: "
+    Leer numeroBuscado
+	
+    encontrado <- Falso
+	
+    ' Buscar el n�mero en el arreglo
+    Para i <- 1 Hasta n
+        Si arreglo[i] = numeroBuscado Entonces
+            encontrado <- Verdadero
+            Salir  ' Salir del bucle si se encuentra el n�mero
+        FinSi
+    FinPara
+	
+    Si encontrado Entonces
+        Escribir "El n�mero", numeroBuscado, " est� presente en el arreglo."
+    Sino
+        Escribir "El n�mero", numeroBuscado, " no est� en el arreglo."
+    FinSi
+FinFuncion
+
+Funcion  ContarElementosPares
+    Definir n, i, contadorPares como Entero
+    Definir arreglo[100] como Entero  ' Puedes ajustar el tama�o del arreglo seg�n tus necesidades
+	
+    Escribir "Ingrese la cantidad de elementos en el arreglo: "
+    Leer n
+	
+    ' Leer los elementos del arreglo
+    Para i <- 1 Hasta n
+        Escribir "Ingrese el elemento ", i, ": "
+        Leer arreglo[i]
+    FinPara
+	
+    contadorPares <- 0
+	
+    ' Contar los n�meros pares en el arreglo
+    Para i <- 1 Hasta n
+        Si arreglo[i] MOD 2 = 0 Entonces
+            contadorPares <- contadorPares + 1
+        FinSi
+    FinPara
+	
+    Escribir "El arreglo contiene ", contadorPares, " n�meros pares."
+FinFuncion
+
+Funcion InvertirArreglo
+    Definir n, i, temp como Entero
+    Definir arreglo[100] como Entero  ' Puedes ajustar el tama�o del arreglo seg�n tus necesidades
+	
+    Escribir "Ingrese la cantidad de elementos en el arreglo: "
+    Leer n
+	
+    ' Leer los elementos del arreglo
+    Para i <- 1 Hasta n
+        Escribir "Ingrese el elemento ", i, ": "
+        Leer arreglo[i]
+    FinPara
+	
+    ' Invertir el arreglo
+    Para i <- 1 Hasta n / 2
+        temp <- arreglo[i]
+        arreglo[i] <- arreglo[n - i + 1]
+        arreglo[n - i + 1] <- temp
+    FinPara
+	
+    Escribir "El arreglo invertido es:"
+    Para i <- 1 Hasta n
+        Escribir "Elemento ", i, ": ", arreglo[i]
+    FinPara
+FinFuncion
+
+Funcion BuscarIndice
+    Definir n, i, valorBuscado como Entero
+    Definir arreglo[100] como Entero  ' Puedes ajustar el tama�o del arreglo seg�n tus necesidades
+    Definir indices[100] como Entero  ' Almacenar� los �ndices donde se encuentra el valor
+    Definir contadorIndices como Entero
+    contadorIndices <- 0
+	
+    Escribir "Ingrese la cantidad de elementos en el arreglo: "
+    Leer n
+	
+    ' Leer los elementos del arreglo
+    Para i <- 1 Hasta n
+        Escribir "Ingrese el elemento ", i, ": "
+        Leer arreglo[i]
+    FinPara
+	
+    Escribir "Ingrese el valor que desea buscar: "
+    Leer valorBuscado
+	
+    ' Buscar el valor en el arreglo y registrar los �ndices
+    Para i <- 1 Hasta n
+        Si arreglo[i] = valorBuscado Entonces
+            contadorIndices <- contadorIndices + 1
+            indices[contadorIndices] <- i
+        FinSi
+    FinPara
+	
+    Si contadorIndices = 0 Entonces
+        Escribir "El valor", valorBuscado, "no se encuentra en el arreglo."
+    Sino
+        Escribir "El valor", valorBuscado, "se encuentra en los siguientes �ndices:"
+        Para i <- 1 Hasta contadorIndices
+            Escribir "�ndice ", i, ": ", indices[i]
+        FinPara
+    FinSi
+FinFuncion
+
+
+
+
+
+
+Algoritmo Saludar
+	
+	Funcion Saludo()  ' Definimos la funci�n sin par�metros
+		Definir mensaje como Caracter
+		mensaje <- "�Hola, bienvenido!"
+		Devolver mensaje  ' Devolvemos el mensaje de saludo
+FinFuncion
+
+Inicio
+Definir mensajeSaludo como Caracter
+
+mensajeSaludo <- Saludo()  ' Llamamos a la funci�n y almacenamos el resultado en una variable
+
+Escribir mensajeSaludo  ' Mostramos el mensaje de saludo
+FinAlgoritmo
+
+
+
+Algoritmo SumaDosNumeros
+	
+Funcion SumarNumeros(numero1, numero2: Entero) -> Entero  ' Definimos la funci�n con dos par�metros
+		Definir resultado como Entero
+		resultado <- numero1 + numero2
+		Devolver resultado  ' Devolvemos el resultado de la suma
+FinFuncion
+
+Inicio
+Definir num1, num2, sumaResultado como Entero
+
+Escribir "Ingrese el primer n�mero: "
+Leer num1
+
+Escribir "Ingrese el segundo n�mero: "
+Leer num2
+
+sumaResultado <- SumarNumeros(num1, num2)  ' Llamamos a la funci�n con los dos n�meros como argumentos
+
+Escribir "El resultado de la suma es: ", sumaResultado  ' Mostramos el resultado de la suma
+FinAlgoritmo
+
+
+Algoritmo MultiplicarDosNumeros
+	
+Funcion Multiplicar(numero1, numero2: Real) -> Real  ' Definimos la funci�n con dos par�metros y tipo de retorno Real
+		Definir resultado as Real
+		resultado <- numero1 * numero2
+		Devolver resultado  ' Devolvemos el resultado de la multiplicaci�n
+FinFuncion
+
+Inicio
+Definir num1, num2, productoResultado como Real
+
+Escribir "Ingrese el primer n�mero: "
+Leer num1
+
+Escribir "Ingrese el segundo n�mero: "
+Leer num2
+
+productoResultado <- Multiplicar(num1, num2)  ' Llamamos a la funci�n con los dos n�meros como argumentos
+
+Escribir "El resultado de la multiplicaci�n es: ", productoResultado  ' Mostramos el resultado de la multiplicaci�n
+FinAlgoritmo
+
+
+Algoritmo ParOImpar
+	
+SubProceso EsParOImpar(numero: Entero)
+		Si numero MOD 2 = 0 Entonces
+			Escribir "El n�mero", numero, " es par."
+		Sino
+			Escribir "El n�mero", numero, " es impar."
+		FinSi
+FinSubProceso
+
+Inicio
+Definir num como Entero
+
+Escribir "Ingrese un n�mero: "
+Leer num
+
+EsParOImpar(num)  ' Llamamos al SubProceso para determinar si el n�mero es par o impar
+FinAlgoritmo
+
+
+
+Algoritmo CalcularAreaRectangulo
+	
+Funcion AreaRectangulo(base, altura: Real) -> Real  ' Definimos la funci�n con dos par�metros y tipo de retorno Real
+		Definir area as Real
+		area <- base * altura
+		Devolver area  ' Devolvemos el �rea calculada
+FinFuncion
+
+Inicio
+Definir base, altura, areaResultado as Real
+
+Escribir "Ingrese la base del rect�ngulo: "
+Leer base
+
+Escribir "Ingrese la altura del rect�ngulo: "
+Leer altura
+
+areaResultado <- AreaRectangulo(base, altura)  ' Llamamos a la funci�n con los dos valores como argumentos
+
+Escribir "El �rea del rect�ngulo es: ", areaResultado  ' Mostramos el resultado del c�lculo del �rea
+FinAlgoritmo
+
+
+Algoritmo ImprimirNombre
+	
+	SubProceso ImprimirMiNombre()
+		Escribir "Mi nombre es [tu nombre aqu�]."  ' Reemplaza "[tu nombre aqu�]" con tu nombre real
+FinSubProceso
+
+Inicio
+ImprimirMiNombre()  ' Llamamos al SubProceso para imprimir tu nombre
+FinAlgoritmo
+
+
+Algoritmo ConvertirCelsiusAFahrenheit
+	
+Funcion CelsiusAFahrenheit(gradosCelsius: Real) -> Real
+		Definir gradosFahrenheit como Real
+		gradosFahrenheit <- (gradosCelsius * 9/5) + 32
+		Devolver gradosFahrenheit
+FinFuncion
+
+Inicio
+Definir celsius, fahrenheitResultado como Real
+
+Escribir "Ingrese la temperatura en grados Celsius: "
+Leer celsius
+
+fahrenheitResultado <- CelsiusAFahrenheit(celsius)
+
+Escribir "La temperatura en grados Fahrenheit es: ", fahrenheitResultado
+FinAlgoritmo
+
+
+Algoritmo ContarCaracterEnFrase
+	
+Funcion ContarCaracter(frase: Caracter, caracterBuscado: Caracter) -> Entero
+			Definir contador como Entero
+			contador <- 0
+			
+			Para cada letra en frase Hacer
+				Si letra = caracterBuscado Entonces
+					contador <- contador + 1
+				FinSi
+			FinPara
+			
+			Devolver contador
+FinFuncion
+
+Inicio
+Definir frase, caracter, resultado como Caracter
+Definir cantidadCaracteres como Entero
+
+Escribir "Ingrese una frase: "
+Leer frase
+
+Escribir "Ingrese el car�cter que desea contar: "
+Leer caracter
+
+cantidadCaracteres <- ContarCaracter(frase, caracter)
+
+Escribir "El car�cter '", caracter, "' aparece ", cantidadCaracteres, " veces en la frase."
+FinAlgoritmo
+
+
+Algoritmo ImprimirNumerosDel1Al10
+	
+	SubProceso ImprimirNumeros()
+		Definir i como Entero
+		Para i <- 1 Hasta 10 Hacer
+			Escribir i
+		FinPara
+FinSubProceso
+
+Inicio
+ImprimirNumeros()  ' Llamamos al SubProceso para imprimir los n�meros del 1 al 10
+FinAlgoritmo
+
+
+Algoritmo SumarListaNumeros
+	
+Funcion SumarNumeros(lista: Arreglo de Real, cantidad: Entero) -> Real
+			Definir suma as Real
+			suma <- 0
+			
+			Para i <- 1 Hasta cantidad Hacer
+				suma <- suma + lista[i]
+			FinPara
+			
+			Devolver suma
+FinFuncion
+
+Inicio
+Definir cantidadNumeros como Entero
+Definir numeros[100] como Real  ' Puedes ajustar el tama�o del arreglo seg�n tus necesidades
+Definir resultadoSuma as Real
+
+Escribir "Ingrese la cantidad de n�meros que desea sumar: "
+Leer cantidadNumeros
+
+Para i <- 1 Hasta cantidadNumeros Hacer
+	Escribir "Ingrese el n�mero ", i, ": "
+	Leer numeros[i]
+FinPara
+
+resultadoSuma <- SumarNumeros(numeros, cantidadNumeros)
+
+Escribir "La suma de los n�meros es: ", resultadoSuma
+FinAlgoritmo
+
+
+
+
+
+
+	
+
+
+Algoritmo resolverejerciciosciclos
+	TablaDeMultiplicar
+	
+FinAlgoritmo
