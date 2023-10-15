@@ -128,496 +128,459 @@ Funcion SumaDeImpares
     
     Escribir "La suma de los n�meros impares del 1 al 100 es: ", suma
 FinFuncion
-Funcion ContadorDeCaracteres
-    Definir palabra Como Cadena
-    Definir longitud Como Entero
-    
-    Escribir "Ingresa una palabra: "
-    Leer palabra
-    
-    longitud <- 0
-    
-    Para i <- 1 Hasta Longitud(palabra) Con Paso 1 Hacer
-        longitud <- longitud + 1
-    FinPara
-    
-    Escribir "La palabra tiene ", longitud, " caracteres."
-FinFuncion
-Funcion SumaDeNumeros
-    Definir numero, suma Como Entero
-    
-    suma <- 0
-    
-    Escribir "Ingresa n�meros enteros positivos uno por uno. Ingresa un n�mero negativo para finalizar."
-    
-    Leer numero
-    
-    Mientras numero >= 0 Hacer
-        suma <- suma + numero
-        Leer numero
-    FinMientras
-    
-    Escribir "La suma de los n�meros ingresados es: ", suma
-FinFuncion
-Funcion CuentaRegresiva
-    Definir numero Como Entero
-    
-    Escribir "Ingresa un n�mero entero positivo: "
-    Leer numero
-    
-    Si numero <= 0 Entonces
-        Escribir "El n�mero ingresado no es v�lido. Debe ser un n�mero entero positivo."
-    Sino
-        Mientras numero >= 1 Hacer
-            Escribir numero
-            numero <- numero - 1
-        FinMientras
-    FinSi
+//ENTRADA: Pedimos al usuario que ingrese una palabra (leer).
+//PROCESO: Utilizamos la función Longitud para contar cuántos caracteres hay en la palabra ingresada.
+//SALIDA: Mostramos el número de caracteres.
+Funcion contarCaracteres
+	Definir palabra Como Cadena
+	
+	Escribir "Ingrese una palabra: "
+	Leer palabra
+	
+	Escribir "La palabra tiene ", Longitud(palabra), " caracteres."
 FinFuncion
 
-
-
-
-Funcion SumaDeElementos
-    Definir arreglo, suma Como Entero // Crear un arreglo de 10 elementos (puedes ajustar el tama�o seg�n tus necesidades)
-    Dimension arreglo[10]
-    
-    // Llenar el arreglo con valores (en este caso, valores aleatorios)
-    Para i <- 1 Hasta 10 Hacer
-        arreglo[i] <- Aleatorio(1, 100)  // Genera n�meros aleatorios entre 1 y 100
-    FinPara
-    
-    suma <- 0  // Inicializar la variable suma en 0
-    
-    // Iterar a trav�s de los elementos del arreglo y sumarlos
-    Para i <- 1 Hasta 10 Hacer
-        suma <- suma + arreglo[i]
-    FinPara
-    
-    Escribir "El arreglo contiene los siguientes elementos:"
-    
-    // Mostrar los elementos del arreglo
-    Para i <- 1 Hasta 10 Hacer
-        Escribir arreglo[i]
-    FinPara
-    
-    Escribir "La suma de los elementos es: ", suma
+//PROCESO: Pedimos al usuario que ingrese números enteros positivos uno por uno y utilizamos un bucle while 
+//para calcular la suma de estos números. El ciclo debe terminar cuando el usuario ingrese un número negativo.
+//SALIDA: Mostramos la suma de los números ingresados.
+Funcion sumaNumerosPositivos
+	Definir _numero, suma Como Entero
+	suma = 0
+	
+	Escribir "Ingrese números enteros positivos (ingrese un número negativo para terminar):"
+	Leer _numero
+	
+	Mientras _numero >= 0
+		suma = suma + _numero
+		Leer _numero
+	FinMientras
+	
+	Escribir "La suma de los números ingresados es: ", suma
 FinFuncion
 
-
-Funcion  PromedioCalificaciones
-    Definir n, i como Entero
-    Definir calificaciones[100] como Real  ' Puedes ajustar el tama�o del arreglo seg�n tus necesidades
-    Definir suma, promedio como Real
+//ENTRADA: Pedimos al usuario que ingrese un número entero positivo (leer).
+//PROCESO: Utilizamos un bucle while para mostrar una cuenta regresiva desde ese número hasta 1.
+//SALIDA: Mostramos la cuenta regresiva.
+Funcion cuentaRegresiva
+	Definir _numero Como Entero
 	
-    Escribir "Ingrese la cantidad de calificaciones: "
-    Leer n
+	Escribir "Ingrese un número entero positivo: "
+	Leer _numero
 	
-    ' Leer las calificaciones y calcular la suma
-    suma <- 0
-    Para i <- 1 Hasta n
-        Escribir "Ingrese la calificaci�n ", i, ": "
-        Leer calificaciones[i]
-        suma <- suma + calificaciones[i]
-    FinPara
+	Escribir "Cuenta regresiva desde ", _numero, " hasta 1:"
 	
-    ' Calcular el promedio
-    promedio <- suma / n
-	
-    Escribir "Calificaciones ingresadas:"
-    Para i <- 1 Hasta n
-        Escribir "Calificaci�n ", i, ": ", calificaciones[i]
-    FinPara
-	
-    Escribir "El promedio de las calificaciones es: ", promedio
+	Mientras numero >= 1
+		Escribir _numero
+		numero = _numero - 1
+	FinMientras
 FinFuncion
 
-Funcion  MayorMenorValor
-    Definir n, i como Entero
-    Definir numeros[100] como Entero  ' Puedes ajustar el tama�o del arreglo seg�n tus necesidades
-    Definir maximo, minimo como Entero
+//PROCESO: Creamos un arreglo de números enteros y calculamos la suma de todos sus elementos.
+//SALIDA: Mostramos la suma de los elementos del arreglo.
+Funcion sumaElementosArreglo
+	Definir arreglo, indice, elemento, suma Como Entero
+	Dimension arreglo[5]
 	
-    Escribir "Ingrese la cantidad de n�meros: "
-    Leer n
+	suma = 0
 	
-    ' Leer los n�meros y encontrar el m�ximo y el m�nimo
-    Para i <- 1 Hasta n
-        Escribir "Ingrese el n�mero ", i, ": "
-        Leer numeros[i]
-		
-        Si i = 1 Entonces
-            maximo <- numeros[i]
-            minimo <- numeros[i]
-        Sino
-            Si numeros[i] > maximo Entonces
-                maximo <- numeros[i]
-            FinSi
-            Si numeros[i] < minimo Entonces
-                minimo <- numeros[i]
-            FinSi
-        FinSi
-    FinPara
+	// Inicializamos el arreglo con valores
+	arreglo[1] = 5
+	arreglo[2] = 10
+	arreglo[3] = 15
+	arreglo[4] = 20
+	arreglo[5] = 25
 	
-    Escribir "N�meros ingresados:"
-    Para i <- 1 Hasta n
-        Escribir "N�mero ", i, ": ", numeros[i]
-    FinPara
+	Para indice = 5 Hasta 1 Con Paso -1 Hacer
+		suma = suma + arreglo[indice]
+	Fin Para
 	
-    Escribir "El n�mero m�ximo es: ", maximo
-    Escribir "El n�mero m�nimo es: ", minimo
+	Escribir "La suma de los elementos en el arreglo es: ", suma
 FinFuncion
 
-Funcion BuscarElemento
-    Definir n, i, numeroBuscado como Entero
-    Definir arreglo[100] como Entero  ' Puedes ajustar el tama�o del arreglo seg�n tus necesidades
-    Definir encontrado como Logico
+//PROCESO: Creamos un arreglo de calificaciones (números decimales) y calculamos el promedio de las calificaciones.
+//SALIDA: Mostramos el promedio de las calificaciones en el arreglo.
+Funcion promedioCalificaciones
+	Definir calificaciones, suma, promedio Como Real
+	Dimension calificaciones[5]
 	
-    Escribir "Ingrese la cantidad de elementos en el arreglo: "
-    Leer n
+	suma = 0
 	
-    ' Leer los elementos del arreglo
-    Para i <- 1 Hasta n
-        Escribir "Ingrese el elemento ", i, ": "
-        Leer arreglo[i]
-    FinPara
+	// Inicializamos el arreglo con calificaciones
+	calificaciones[1] = 9.5
+	calificaciones[2] = 8.0
+	calificaciones[3] = 7.5
+	calificaciones[4] = 9.0
+	calificaciones[5] = 8.5
 	
-    Escribir "Ingrese el n�mero que desea buscar: "
-    Leer numeroBuscado
+	Para indice = 5 Hasta 1 Con Paso -1 Hacer
+		suma = suma + calificaciones[indice]
+	Fin Para
 	
-    encontrado <- Falso
+	promedio = suma / 5
 	
-    ' Buscar el n�mero en el arreglo
-    Para i <- 1 Hasta n
-        Si arreglo[i] = numeroBuscado Entonces
-            encontrado <- Verdadero
-            Salir  ' Salir del bucle si se encuentra el n�mero
-        FinSi
-    FinPara
-	
-    Si encontrado Entonces
-        Escribir "El n�mero", numeroBuscado, " est� presente en el arreglo."
-    Sino
-        Escribir "El n�mero", numeroBuscado, " no est� en el arreglo."
-    FinSi
+	Escribir "El promedio de las calificaciones es: ", promedio
 FinFuncion
 
-Funcion  ContarElementosPares
-    Definir n, i, contadorPares como Entero
-    Definir arreglo[100] como Entero  ' Puedes ajustar el tama�o del arreglo seg�n tus necesidades
+//PROCESO: Encontramos el valor máximo y mínimo en un arreglo de números enteros.
+//SALIDA: Mostramos el valor máximo y mínimo.
+Funcion encontrarMayorMenor
+	Definir arreglo, _mayor, _menor Como Real
+	Dimension arreglo[5]
 	
-    Escribir "Ingrese la cantidad de elementos en el arreglo: "
-    Leer n
+	// Inicializamos el arreglo con valores
+	//arreglo = [15, 7, 25, 10, 5]
+	arreglo[1] = 5
+	arreglo[2] = 7
+	arreglo[3] = 25
+	arreglo[4] = 10
+	arreglo[5] = 5
 	
-    ' Leer los elementos del arreglo
-    Para i <- 1 Hasta n
-        Escribir "Ingrese el elemento ", i, ": "
-        Leer arreglo[i]
-    FinPara
+	// Inicializamos las variables mayor y menor con el primer elemento del arreglo
+	_mayor = arreglo[1]
+	_menor = arreglo[1]
 	
-    contadorPares <- 0
-	
-    ' Contar los n�meros pares en el arreglo
-    Para i <- 1 Hasta n
-        Si arreglo[i] MOD 2 = 0 Entonces
-            contadorPares <- contadorPares + 1
-        FinSi
-    FinPara
-	
-    Escribir "El arreglo contiene ", contadorPares, " n�meros pares."
-FinFuncion
-
-Funcion InvertirArreglo
-    Definir n, i, temp como Entero
-    Definir arreglo[100] como Entero  ' Puedes ajustar el tama�o del arreglo seg�n tus necesidades
-	
-    Escribir "Ingrese la cantidad de elementos en el arreglo: "
-    Leer n
-	
-    ' Leer los elementos del arreglo
-    Para i <- 1 Hasta n
-        Escribir "Ingrese el elemento ", i, ": "
-        Leer arreglo[i]
-    FinPara
-	
-    ' Invertir el arreglo
-    Para i <- 1 Hasta n / 2
-        temp <- arreglo[i]
-        arreglo[i] <- arreglo[n - i + 1]
-        arreglo[n - i + 1] <- temp
-    FinPara
-	
-    Escribir "El arreglo invertido es:"
-    Para i <- 1 Hasta n
-        Escribir "Elemento ", i, ": ", arreglo[i]
-    FinPara
-FinFuncion
-
-Funcion BuscarIndice
-    Definir n, i, valorBuscado como Entero
-    Definir arreglo[100] como Entero  ' Puedes ajustar el tama�o del arreglo seg�n tus necesidades
-    Definir indices[100] como Entero  ' Almacenar� los �ndices donde se encuentra el valor
-    Definir contadorIndices como Entero
-    contadorIndices <- 0
-	
-    Escribir "Ingrese la cantidad de elementos en el arreglo: "
-    Leer n
-	
-    ' Leer los elementos del arreglo
-    Para i <- 1 Hasta n
-        Escribir "Ingrese el elemento ", i, ": "
-        Leer arreglo[i]
-    FinPara
-	
-    Escribir "Ingrese el valor que desea buscar: "
-    Leer valorBuscado
-	
-    ' Buscar el valor en el arreglo y registrar los �ndices
-    Para i <- 1 Hasta n
-        Si arreglo[i] = valorBuscado Entonces
-            contadorIndices <- contadorIndices + 1
-            indices[contadorIndices] <- i
-        FinSi
-    FinPara
-	
-    Si contadorIndices = 0 Entonces
-        Escribir "El valor", valorBuscado, "no se encuentra en el arreglo."
-    Sino
-        Escribir "El valor", valorBuscado, "se encuentra en los siguientes �ndices:"
-        Para i <- 1 Hasta contadorIndices
-            Escribir "�ndice ", i, ": ", indices[i]
-        FinPara
-    FinSi
-FinFuncion
-
-
-
-
-
-
-Algoritmo Saludar
-	
-	Funcion Saludo()  ' Definimos la funci�n sin par�metros
-		Definir mensaje como Caracter
-		mensaje <- "�Hola, bienvenido!"
-		Devolver mensaje  ' Devolvemos el mensaje de saludo
-FinFuncion
-
-Inicio
-Definir mensajeSaludo como Caracter
-
-mensajeSaludo <- Saludo()  ' Llamamos a la funci�n y almacenamos el resultado en una variable
-
-Escribir mensajeSaludo  ' Mostramos el mensaje de saludo
-FinAlgoritmo
-
-
-
-Algoritmo SumaDosNumeros
-	
-Funcion SumarNumeros(numero1, numero2: Entero) -> Entero  ' Definimos la funci�n con dos par�metros
-		Definir resultado como Entero
-		resultado <- numero1 + numero2
-		Devolver resultado  ' Devolvemos el resultado de la suma
-FinFuncion
-
-Inicio
-Definir num1, num2, sumaResultado como Entero
-
-Escribir "Ingrese el primer n�mero: "
-Leer num1
-
-Escribir "Ingrese el segundo n�mero: "
-Leer num2
-
-sumaResultado <- SumarNumeros(num1, num2)  ' Llamamos a la funci�n con los dos n�meros como argumentos
-
-Escribir "El resultado de la suma es: ", sumaResultado  ' Mostramos el resultado de la suma
-FinAlgoritmo
-
-
-Algoritmo MultiplicarDosNumeros
-	
-Funcion Multiplicar(numero1, numero2: Real) -> Real  ' Definimos la funci�n con dos par�metros y tipo de retorno Real
-		Definir resultado as Real
-		resultado <- numero1 * numero2
-		Devolver resultado  ' Devolvemos el resultado de la multiplicaci�n
-FinFuncion
-
-Inicio
-Definir num1, num2, productoResultado como Real
-
-Escribir "Ingrese el primer n�mero: "
-Leer num1
-
-Escribir "Ingrese el segundo n�mero: "
-Leer num2
-
-productoResultado <- Multiplicar(num1, num2)  ' Llamamos a la funci�n con los dos n�meros como argumentos
-
-Escribir "El resultado de la multiplicaci�n es: ", productoResultado  ' Mostramos el resultado de la multiplicaci�n
-FinAlgoritmo
-
-
-Algoritmo ParOImpar
-	
-SubProceso EsParOImpar(numero: Entero)
-		Si numero MOD 2 = 0 Entonces
-			Escribir "El n�mero", numero, " es par."
-		Sino
-			Escribir "El n�mero", numero, " es impar."
+	Para indice = 5 Hasta 1 Con Paso -1 Hacer
+		Si arreglo[indice] > _mayor Entonces
+			_mayor = arreglo[indice]
 		FinSi
-FinSubProceso
-
-Inicio
-Definir num como Entero
-
-Escribir "Ingrese un n�mero: "
-Leer num
-
-EsParOImpar(num)  ' Llamamos al SubProceso para determinar si el n�mero es par o impar
-FinAlgoritmo
-
-
-
-Algoritmo CalcularAreaRectangulo
+		
+		Si arreglo[indice] < _menor Entonces
+			_menor = arreglo[indice]
+		FinSi
+	Fin Para
 	
-Funcion AreaRectangulo(base, altura: Real) -> Real  ' Definimos la funci�n con dos par�metros y tipo de retorno Real
-		Definir area as Real
-		area <- base * altura
-		Devolver area  ' Devolvemos el �rea calculada
+	Escribir "El valor máximo en el arreglo es: ", _mayor
+	Escribir "El valor mínimo en el arreglo es: ", _menor
 FinFuncion
 
-Inicio
-Definir base, altura, areaResultado as Real
-
-Escribir "Ingrese la base del rect�ngulo: "
-Leer base
-
-Escribir "Ingrese la altura del rect�ngulo: "
-Leer altura
-
-areaResultado <- AreaRectangulo(base, altura)  ' Llamamos a la funci�n con los dos valores como argumentos
-
-Escribir "El �rea del rect�ngulo es: ", areaResultado  ' Mostramos el resultado del c�lculo del �rea
-FinAlgoritmo
-
-
-Algoritmo ImprimirNombre
+//ENTRADA: Pedimos al usuario que ingrese un número a buscar en un arreglo (leer).
+//PROCESO: Verificamos si ese número está presente en un arreglo dado.
+//SALIDA: Mostramos si el número está presente o no.
+Funcion buscarElemento
+	Definir arreglo, _numero Como Entero
+	Definir encontrado Como Logico
+	Dimension  arreglo[5]
 	
-	SubProceso ImprimirMiNombre()
-		Escribir "Mi nombre es [tu nombre aqu�]."  ' Reemplaza "[tu nombre aqu�]" con tu nombre real
-FinSubProceso
-
-Inicio
-ImprimirMiNombre()  ' Llamamos al SubProceso para imprimir tu nombre
-FinAlgoritmo
-
-
-Algoritmo ConvertirCelsiusAFahrenheit
+	encontrado = Falso
 	
-Funcion CelsiusAFahrenheit(gradosCelsius: Real) -> Real
-		Definir gradosFahrenheit como Real
-		gradosFahrenheit <- (gradosCelsius * 9/5) + 32
-		Devolver gradosFahrenheit
+	// Inicializamos el arreglo con valores
+	//arreglo = [10, 20, 30, 40, 50]
+	arreglo[1] = 10
+	arreglo[2] = 20
+	arreglo[3] = 30
+	arreglo[4] = 40
+	arreglo[5] = 50
+	
+	Escribir "Ingrese un número para buscar en el arreglo: "
+	Leer _numero
+	
+	Para indice = 5 Hasta 1 Con Paso -1 Hacer
+		Si arreglo[indice] == _numero Entonces
+			encontrado = Verdadero
+			//Salir // Salimos del bucle si encontramos el número
+		FinSi
+	FinPara
+	
+	Si encontrado Entonces
+		Escribir "El número ", _numero, " está presente en el arreglo."
+	SiNo
+		Escribir "El número ", _numero, " no está presente en el arreglo."
+	FinSi
 FinFuncion
 
-Inicio
-Definir celsius, fahrenheitResultado como Real
-
-Escribir "Ingrese la temperatura en grados Celsius: "
-Leer celsius
-
-fahrenheitResultado <- CelsiusAFahrenheit(celsius)
-
-Escribir "La temperatura en grados Fahrenheit es: ", fahrenheitResultado
-FinAlgoritmo
-
-
-Algoritmo ContarCaracterEnFrase
+//PROCESO: Contamos cuántos números pares hay en un arreglo de números enteros.
+//SALIDA: Mostramos el número de elementos pares en el arreglo.
+Funcion contarElementosPares
+	Definir arreglo, elemento, contadorPares Como Entero
+	Dimension arreglo[6]
 	
-Funcion ContarCaracter(frase: Caracter, caracterBuscado: Caracter) -> Entero
-			Definir contador como Entero
-			contador <- 0
-			
-			Para cada letra en frase Hacer
-				Si letra = caracterBuscado Entonces
-					contador <- contador + 1
-				FinSi
-			FinPara
-			
-			Devolver contador
+	contadorPares = 0
+	
+	// Inicializamos el arreglo con valores
+	//arreglo = [5, 10, 15, 20, 25, 30]
+	arreglo[1] = 5
+	arreglo[2] = 10
+	arreglo[3] = 15
+	arreglo[4] = 20
+	arreglo[5] = 25
+	arreglo[6] = 30
+	
+	Para indice = 6 Hasta 1 Con Paso -1 Hacer
+		elemento = arreglo[indice]
+		
+		Si elemento % 2 == 0 Entonces
+			contadorPares = contadorPares + 1
+		FinSi
+	FinPara
+	
+	Escribir "El número de elementos pares en el arreglo es: ", contadorPares
 FinFuncion
 
-Inicio
-Definir frase, caracter, resultado como Caracter
-Definir cantidadCaracteres como Entero
-
-Escribir "Ingrese una frase: "
-Leer frase
-
-Escribir "Ingrese el car�cter que desea contar: "
-Leer caracter
-
-cantidadCaracteres <- ContarCaracter(frase, caracter)
-
-Escribir "El car�cter '", caracter, "' aparece ", cantidadCaracteres, " veces en la frase."
-FinAlgoritmo
-
-
-Algoritmo ImprimirNumerosDel1Al10
+//PROCESO: Invertimos el orden de los elementos en un arreglo.
+//SALIDA: Mostramos el arreglo invertido.
+Funcion invertirArreglo
+	Definir longitudArreglo, arregloOriginal, arregloInvertido, elemento Como Entero
+	Dimension arregloOriginal[5]
+	Dimension arregloInvertido[5]
 	
-	SubProceso ImprimirNumeros()
-		Definir i como Entero
-		Para i <- 1 Hasta 10 Hacer
+	// Inicializamos el arreglo original con valores
+	arregloOriginal[1] = 1
+	arregloOriginal[2] = 2
+	arregloOriginal[3] = 3
+	arregloOriginal[4] = 4
+	arregloOriginal[5] = 5
+	
+	longitudArreglo = 5
+	
+	// Invertimos el arreglo y recorremos la mitad del arreglo, intercambiando 
+	//los elementos desde el principio con los elementos desde el final
+	Para indice = 1 Hasta longitudArreglo Hacer // o longitudArreglo/2
+		elemento = arregloOriginal[indice]
+		arregloInvertido[indice] = arregloOriginal[longitudArreglo -indice +1]
+		//arregloInvertido[_longitud -indice +1] = elemnto
+	FinPara
+	
+	Escribir "Arreglo invertido:"
+	Escribir arregloInvertido[1]
+	Escribir arregloInvertido[2]
+	Escribir arregloInvertido[3]
+	Escribir arregloInvertido[4]
+	Escribir arregloInvertido[5]
+FinFuncion
+
+//ENTRADA: Pedimos al usuario que ingrese un valor a buscar en un arreglo (leer).
+//PROCESO: Encontramos el índice de ese valor en un arreglo y mostramos todos los índices si el valor aparece más de una vez.
+//SALIDA: Mostramos los índices del valor encontrado.
+Funcion buscarIndiceValor
+	Definir arreglo, _valor Como Entero
+	Definir encontrado Como Logico
+	Dimension arreglo[6]
+	
+	encontrado = Falso
+	
+	// Inicializamos el arreglo con valores
+	//arreglo = [10, 20, 30, 40, 20, 50]
+	arreglo[1] = 10
+	arreglo[2] = 20
+	arreglo[3] = 30
+	arreglo[4] = 40
+	arreglo[5] = 20
+	arreglo[6] = 50
+	
+	Escribir "Ingrese un valor para buscar en el arreglo: "
+	Leer _valor
+	
+	Escribir "Los índices del valor ", _valor, " en el arreglo son:"
+	
+	Para i = 1 Hasta 6
+		Si arreglo[i] == _valor Entonces
 			Escribir i
-		FinPara
-FinSubProceso
-
-Inicio
-ImprimirNumeros()  ' Llamamos al SubProceso para imprimir los n�meros del 1 al 10
-FinAlgoritmo
-
-
-Algoritmo SumarListaNumeros
+			encontrado = Verdadero
+		FinSi
+	FinPara
 	
-Funcion SumarNumeros(lista: Arreglo de Real, cantidad: Entero) -> Real
-			Definir suma as Real
-			suma <- 0
-			
-			Para i <- 1 Hasta cantidad Hacer
-				suma <- suma + lista[i]
-			FinPara
-			
-			Devolver suma
+	Si no encontrado Entonces
+		Escribir "El valor ", _valor, " no se encuentra en el arreglo."
+	FinSi
 FinFuncion
 
-Inicio
-Definir cantidadNumeros como Entero
-Definir numeros[100] como Real  ' Puedes ajustar el tama�o del arreglo seg�n tus necesidades
-Definir resultadoSuma as Real
+//PROCESO: Creamos una función sin parámetros para saludar.
+//SALIDA: Mostramos un mensaje de saludo.
+Funcion saludar
+	Escribir "¡Hola! Bienvenido."
+FinFuncion
 
-Escribir "Ingrese la cantidad de n�meros que desea sumar: "
-Leer cantidadNumeros
+//ENTRADA: Pedimos al usuario que ingrese dos números (leer).
+//PROCESO: Creamos una función con parámetros para sumar los dos números.
+//SALIDA: Mostramos la suma de los dos números.
+Funcion sumarDosNumeros(numero1, numero2)
+	Definir suma Como Entero
+	suma = numero1 + numero2
+	Escribir "La suma de ", numero1, " y ", numero2, " es: ", suma
+FinFuncion
 
-Para i <- 1 Hasta cantidadNumeros Hacer
-	Escribir "Ingrese el n�mero ", i, ": "
-	Leer numeros[i]
-FinPara
+//ENTRADA: Pedimos al usuario que ingrese dos números (leer).
+//PROCESO: Creamos una función con return para multiplicar los dos números y devolver el resultado.
+//SALIDA: Mostramos el resultado de la multiplicación.
+Funcion multiplicarDosNumeros(numero1, numero2)
+	Definir resultado Como Entero
+	resultado = numero1 * numero2
+	Devolver resultado
+FinFuncion
 
-resultadoSuma <- SumarNumeros(numeros, cantidadNumeros)
+//ENTRADA: Pedimos al usuario que ingrese un número (leer).
+//PROCESO: Creamos una función sin return para determinar si el número es par o impar y mostramos el resultado.
+//SALIDA: Mostramos si el número es par o impar.
+Funcion verificarParImpar(_numero)
+	Si numero % 2 == 0 Entonces
+		Escribir "El número ", _numero, " es par."
+	SiNo
+		Escribir "El número ", _numero, " es impar."
+	FinSi
+FinFuncion
 
-Escribir "La suma de los n�meros es: ", resultadoSuma
-FinAlgoritmo
+//ENTRADA: Pedimos al usuario que ingrese la base y la altura del rectángulo (leer).
+//PROCESO: Creamos una función con parámetros y return para calcular el área del rectángulo.
+//SALIDA: Mostramos el área del rectángulo.
+Funcion calcularAreaRectangulo(base, altura)
+	Definir area Como Real
+	area = base * altura
+	Devolver area
+FinFuncion
 
+//PROCESO: Creamos una función sin parámetros para imprimir tu nombre.
+//SALIDA: Mostramos tu nombre.
+Funcion imprimirNombre
+	Escribir "Mi nombre es [Tu Nombre]"
+FinFuncion
 
+//ENTRADA: Pedimos al usuario que ingrese una temperatura en grados Celsius (leer).
+//PROCESO: Creamos una función con return para convertir grados Celsius a Fahrenheit.
+//SALIDA: Mostramos la temperatura en grados Fahrenheit.
+Funcion celsiusToFahrenheit(gradosCelsius)
+	Definir gradosFahrenheit Como Real
+	gradosFahrenheit = (gradosCelsius * 9/5) + 32
+	Devolver gradosFahrenheit
+FinFuncion
 
-
-
-
+//ENTRADA: Pedimos al usuario que ingrese una frase y un carácter (leer).
+//PROCESO: Creamos una función con parámetros para contar cuántas veces aparece el carácter en la frase.
+//SALIDA: Mostramos el número de veces que aparece el carácter en la frase.
+Funcion contarCaracterEnFrase(frase, _caracter)
+	Definir contador Como Entero
+	contador = 0
 	
-
-
-Algoritmo resolverejerciciosciclos
-	TablaDeMultiplicar
+	Para index = 1 Hasta Longitud(frase)
+		Si Subcadena(frase, index, index) == _caracter Entonces
+			contador = contador + 1
+		FinSi
+	FinPara
 	
+	Escribir "El carácter: ", _caracter, " aparece ", contador, " veces en la frase."
+FinFuncion
+
+//PROCESO: Creamos una función sin parámetros para imprimir los números del 1 al 10.
+//SALIDA: Mostramos los números.
+Funcion imprimirNumerosDelUnoAlDiez
+	Para i = 1 Hasta 10
+		Escribir i
+	FinPara
+FinFuncion
+
+//ENTRADA: Pedimos al usuario que ingrese una lista de números separados por comas (leer).
+//PROCESO: Creamos una función con parámetros y return para sumar los números en la lista.
+//SALIDA: Mostramos la suma de los números.
+Funcion sumarListaNumeros(lista)
+	Definir _numeros, suma Como Real
+	
+	_numeros = ConvertirANumero(lista)
+	suma = 0
+	
+	Para index = 1 Hasta _numeros
+		suma = suma + _numero
+	FinPara
+	
+	Devolver suma
+FinFuncion
+
+//ENTRADA: Pedimos al usuario el valor de compras (leer).
+//PROCESO: Calcualmos el valor de descuento (calcular), si las compras
+//son mayores a $100 aplicamos descuento descuentoMax y si son menores aplicamos descuentoMin
+//al valor resultante le sumamos el valor de iva.
+//SALIDA: Mostramos al usuario el totalCompras (mostrar).
+Funcion calcularTotalCompras
+	Definir compras, descuentoMin, descuentoMax, iva, valorMaximo, totalCompras Como Real
+	
+	compras = 0
+	descuentoMin = 15
+	descuentoMax = 20
+	iva = 12
+	valorMaximo = 100
+	totalCompras = 0
+	
+	Escribir "Ingrese el valor de las compras"
+	Leer  compras
+	
+	si compras >= valorMaximo Entonces
+		Definir  descuento Como Real
+		descuento = (compras * (descuentoMax) / 100)
+		compras = compras - descuento
+	SiNo
+		compras = compras - (compras * (descuentoMin) / 100)
+	FinSi
+	
+	totalCompras = compras + (compras * (iva) / 100)
+	
+	Escribir  "Subtotal: ", compras
+	Escribir  "IVA: ", iva, "%"
+	Escribir  "Su valor de las compras mas IVA es: ", totalCompras
+FinFuncion
+
+Algoritmo Principal	
+	//Ejercicios algoritmos secuenciales (paso a paso):
+	//sumaDosNumeros
+	//calcularAreaTriangulo
+	//verificarParOImpar
+	//calculadoraSimple
+	//tablaMultiplicar
+	//copiarPalabra
+	
+	//Ejercicios algoritmos selectivos (con condiciones):
+	//encontrarMayor
+	//verificarElegibilidadVotar
+	//calcularBMI
+	//verificarPositivoNegativoCero
+	//verificarAnoBisiesto
+	//determinarSignoZodiacal
+	//verificarQuincena
+	//determinarDiaSemana
+	//compararFrases
+	//calcularPrecioConDescuento
+	//calcularFacturaConImpuestos
+	//calcularSueldoConAumento
+	//calcularCompraConDescuento
+	//calcularImpuestoSalario
+	//calcularImpuestoSalario2
+	//calcularImpuestoSalario3
+	//calcularBonoAntiguedad
+	//calcularCostoEnvio
+	//calcularDescuentoLealtad
+	//calcularDescuentoVolumenCompra
+	//calcularDescuentoVolumenCompra2
+	//calcularDescuentoVolumenCompra3
+	//calcularCostoServicio
+	
+	//Ejercicios algoritmos (con ciclos For y While):
+	//sumaNumerosPares
+	//tablaMultiplicar
+	//contarVocales
+	//contarDigitos
+	//contarLetrasAlfabeto
+	//sumaNumerosImpares
+	//contarCaracteres
+	//sumaNumerosPositivos
+	//cuentaRegresiva
+	
+	//Ejercicios algoritmos (con arreglos):
+	//sumaElementosArreglo
+	//promedioCalificaciones
+	//encontrarMayorMenor
+	//buscarElemento
+	//contarElementosPares
+	//invertirArreglo
+	//buscarIndiceValor
+	
+	//Ejercicios algoritmos (con funciones)
+	//saludar
+	//sumarDosNumeros(5, 10)
+	//resultado = multiplicarDosNumeros(5, 50)
+	//verificarParImpar(25)
+	//areaRectangulo = calcularAreaRectangulo(base, altura)
+	//imprimirNombre
+	//fahrenheit = celsiusToFahrenheit(celsius)
+	//contarCaracterEnFrase(frase, carac)
+	//imprimirNumerosDelUnoAlDiez
+	//sumaTotal = sumarListaNumeros(lista)
+	
+	//calcularTotalCompras
 FinAlgoritmo
